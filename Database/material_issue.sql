@@ -1,0 +1,12 @@
+CREATE TABLE dbo.MaterialIssues
+(
+    IssueID INT IDENTITY(1,1) PRIMARY KEY,
+    IssueDate DATE NOT NULL,
+    IssueType NVARCHAR(20) NOT NULL,
+    Notes NVARCHAR(500) NULL,
+    CreatedAt DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+
+    CONSTRAINT CK_Issue_Type
+        CHECK (IssueType IN (N'PRODUCTION', N'OTHER'))
+);
+GO
