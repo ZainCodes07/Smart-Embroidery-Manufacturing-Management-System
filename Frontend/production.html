@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - 12h Shift Production Logger</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile / Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Left Navigation Sidebar -->
+        <aside class="sidebar" id="app-sidebar">
+            <div>
+                <!-- Brand Header with Direct Collapse Trigger -->
+                <div class="brand-header">
+                    <div class="brand-left-group">
+                        <div class="brand-logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                                <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M28 12L24 16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                                <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                                      stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <div class="brand-details">
+                            <h1>ZJI Fashions</h1>
+                            <span class="brand-sub-line">Smart Embroidery</span>
+                            <span class="brand-sub-line">Manufacturing</span>
+                        </div>
+                    </div>
+                    <button class="sidebar-collapse-trigger" id="sidebar-collapse-trigger" title="Collapse Sidebar (Hide)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="15 15 12 12 15 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="nav-section">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" id="nav-dashboard">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                                        <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+                                    </svg>
+                                </span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="machines.html" id="nav-machines">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path>
+                                    </svg>
+                                </span>
+                                <span>Machines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="production.html" id="nav-production">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 8v8M8 12h8"></path>
+                                    </svg>
+                                </span>
+                                <span>Production Entry</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="inventory.html" id="nav-inventory">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.29 7 12 12.01 20.71 7"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html" id="nav-reports">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Master Data Section -->
+                    <div class="nav-section-title">Master Data</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="suppliers.html" id="nav-suppliers">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </span>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="materials.html" id="nav-materials">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg>
+                                </span>
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="designs.html" id="nav-designs">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="6" cy="6" r="3"></circle>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                        <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                        <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Designs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom: Quote & User Profile -->
+            <div>
+                <div class="sidebar-art-container">
+                    <div class="sidebar-quote-box">
+                        <div class="sidebar-quote-script">Better<br>Stitches<br>Bigger<br>Dreams</div>
+                        <div class="sidebar-quote-dash"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-user-pill" id="sidebar-user-pill" title="Click for Account Options">
+                    <div class="user-initials-circle admin" id="sidebar-user-avatar">A</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+                        <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+                    </div>
+                    <span class="sidebar-user-arrow">▼</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport" id="main-viewport">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-navbar" id="sidebar-toggle-navbar" title="Expand Navigation Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="13 9 16 12 13 15"></polyline>
+                        </svg>
+                    </button>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search shift records, operators, stitches...">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <!-- Live Date & Time Widget -->
+                    <div class="date-time-widget">
+                        <div class="date-text" id="live-date-label">Wed, 29 Oct 2025</div>
+                        <div class="time-text" id="live-time-label">02:45 PM</div>
+                    </div>
+
+                    <!-- Shift Badge -->
+                    <div class="shift-pill-badge" id="shift-pill-badge">
+                        <div class="shift-icon-sun">☀</div>
+                        <div class="shift-pill-details">
+                            <div class="shift-name" id="topbar-shift-title">Day Shift</div>
+                            <div class="shift-hours" id="topbar-shift-hours">9:00 AM – 9:00 PM</div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <button class="notification-bell-btn" id="notification-bell-btn" title="Notifications">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-count" id="notif-badge">3</span>
+                    </button>
+
+                    <!-- Topbar Profile Pill with Initials -->
+                    <div class="topbar-user-pill" id="topbar-user-pill" title="Click to Switch User / View Profile">
+                        <div class="user-initials-circle admin" id="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <div class="topbar-user-name" id="topbar-user-name">Admin</div>
+                            <div class="topbar-user-role" id="topbar-user-role">Administrator</div>
+                        </div>
+                        <span class="topbar-user-arrow">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Title Banner -->
+            <div class="page-title-banner">
+                <div class="page-title-text">
+                    <h1>12-Hour Shift Production Fleet Logger</h1>
+                    <p>Record multi-item runs, rounds, stitches, and automatic mirror consumption across all 6 embroidery machines</p>
+                </div>
+            </div>
+
+            <!-- Global Shift Cycle & Date Selection Card -->
+            <div class="shift-meta-card">
+                <div class="form-grid-3col">
+                    <div class="form-group">
+                        <label class="form-label">Shift Production Date</label>
+                        <input type="date" id="shift-global-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">12-Hour Shift Cycle</label>
+                        <select id="shift-global-type" class="form-control" required>
+                            <option value="DAY">Day Shift (09:00 AM – 09:00 PM)</option>
+                            <option value="NIGHT">Night Shift (09:00 PM – 09:00 AM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Shift Supervisor / Incharge</label>
+                        <input type="text" id="shift-supervisor-name" class="form-control" placeholder="e.g. Ali Raza" value="Ali Raza" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6-Machine Industrial Fleet Quick Selector Tabs -->
+            <div class="card-header-bar" style="margin-bottom: 10px;">
+                <h3 style="font-size: 15px; font-weight: 700;">Select Machine to Log Output (6 Units Fleet)</h3>
+                <span style="font-size: 11.5px; color: var(--text-muted);">Switch between machines without losing logged entries</span>
+            </div>
+
+            <div class="machine-fleet-tabs" id="machine-fleet-tabs">
+                <!-- Machine 1 Tab -->
+                <button type="button" class="fleet-tab-btn active" data-machine-id="1" data-heads="18" onclick="selectMachineTab(1)">
+                    <div class="fleet-tab-header">
+                        <span class="fleet-tab-title">Machine 01</span>
+                        <span class="fleet-tab-heads">18 Heads</span>
+                    </div>
+                    <div class="fleet-tab-status" id="tab-status-1">● Pending</div>
+                </button>
+
+                <!-- Machine 2 Tab -->
+                <button type="button" class="fleet-tab-btn" data-machine-id="2" data-heads="18" onclick="selectMachineTab(2)">
+                    <div class="fleet-tab-header">
+                        <span class="fleet-tab-title">Machine 02</span>
+                        <span class="fleet-tab-heads">18 Heads</span>
+                    </div>
+                    <div class="fleet-tab-status" id="tab-status-2">● Pending</div>
+                </button>
+
+                <!-- Machine 3 Tab -->
+                <button type="button" class="fleet-tab-btn" data-machine-id="3" data-heads="24" onclick="selectMachineTab(3)">
+                    <div class="fleet-tab-header">
+                        <span class="fleet-tab-title">Machine 03</span>
+                        <span class="fleet-tab-heads">24 Heads</span>
+                    </div>
+                    <div class="fleet-tab-status" id="tab-status-3">● Pending</div>
+                </button>
+
+                <!-- Machine 4 Tab -->
+                <button type="button" class="fleet-tab-btn" data-machine-id="4" data-heads="24" onclick="selectMachineTab(4)">
+                    <div class="fleet-tab-header">
+                        <span class="fleet-tab-title">Machine 04</span>
+                        <span class="fleet-tab-heads">24 Heads</span>
+                    </div>
+                    <div class="fleet-tab-status" id="tab-status-4">● Pending</div>
+                </button>
+
+                <!-- Machine 5 Tab -->
+                <button type="button" class="fleet-tab-btn" data-machine-id="5" data-heads="24" onclick="selectMachineTab(5)">
+                    <div class="fleet-tab-header">
+                        <span class="fleet-tab-title">Machine 05</span>
+                        <span class="fleet-tab-heads">24 Heads</span>
+                    </div>
+                    <div class="fleet-tab-status" id="tab-status-5">● Pending</div>
+                </button>
+
+                <!-- Machine 6 Tab -->
+                <button type="button" class="fleet-tab-btn" data-machine-id="6" data-heads="20" onclick="selectMachineTab(6)">
+                    <div class="fleet-tab-header">
+                        <span class="fleet-tab-title">Machine 06</span>
+                        <span class="fleet-tab-heads">20 Heads</span>
+                    </div>
+                    <div class="fleet-tab-status" id="tab-status-6">● Pending</div>
+                </button>
+            </div>
+
+            <!-- Active Machine Production Workstation Card -->
+            <div class="machine-workstation-card">
+                <div class="workstation-header">
+                    <div class="workstation-title-group">
+                        <h3 id="current-machine-heading">Machine 01 Production Runs</h3>
+                        <p id="current-machine-sub">Active Capacity: 18 Heads • Multi-Item Logging Supported</p>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="master-tag-pill" id="current-machine-heads-pill">18 Heads Active</span>
+                    </div>
+                </div>
+
+                <!-- Shift Notes / Operator on this Machine -->
+                <div class="form-grid-2col" style="margin-bottom: 18px;">
+                    <div class="form-group">
+                        <label class="form-label">Assigned Shift Operator</label>
+                        <input type="text" id="machine-operator-input" class="form-control" placeholder="Operator Name" value="Ali Raza">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Shift Notes / Tension / Thread Breaks</label>
+                        <input type="text" id="machine-notes-input" class="form-control" placeholder="Optional notes for shift handover">
+                    </div>
+                </div>
+
+                <!-- Dynamic Item Runs List for this Machine -->
+                <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="font-size: 13.5px; font-weight: 700; color: var(--text-primary);">
+                        Items / Garment Parts Run During Shift
+                    </h4>
+                    <span style="font-size: 11.5px; color: var(--text-muted);">
+                        Formula: Total Mirrors = Rounds × (Mirrors/Head × Heads)
+                    </span>
+                </div>
+
+                <div class="item-runs-list" id="item-runs-container">
+                    <!-- Dynamic Run Rows injected via JavaScript -->
+                </div>
+
+                <!-- Add Another Item Run Button -->
+                <button type="button" class="btn-add-item-run" id="btn-add-item-run" onclick="addNewItemRunRow()">
+                    <span>➕</span> Add Another Item Run to Machine <span id="add-btn-machine-label">01</span>
+                </button>
+
+                <!-- Subtotal Preview for this Active Machine -->
+                <div class="machine-subtotal-bar">
+                    <div class="subtotal-metrics-group">
+                        <div class="subtotal-metric-item">
+                            <span>Machine Total Stitches</span>
+                            <strong id="machine-subtotal-stitches">0 st</strong>
+                        </div>
+                        <div class="subtotal-metric-item">
+                            <span>Machine Total Mirrors Consumed</span>
+                            <strong id="machine-subtotal-mirrors" style="color: #15803d;">0 Mirrors</strong>
+                        </div>
+                        <div class="subtotal-metric-item">
+                            <span>Item Runs Count</span>
+                            <strong id="machine-subtotal-runs" style="color: var(--text-secondary);">0 Items</strong>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button type="button" class="btn btn-secondary" onclick="saveCurrentMachineLogAndNext()">
+                            <span>Save Machine & Continue ➔</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master 12-Hour Shift Summary Footer Bar -->
+            <div class="shift-master-summary-bar">
+                <div class="shift-master-info">
+                    <h4>12-Hour Shift Fleet Output Summary</h4>
+                    <p id="shift-summary-subtitle">Aggregate production telemetry across all 6 machines</p>
+                </div>
+                <div class="shift-master-stats">
+                    <div class="shift-stat-box">
+                        <span>Fleet Stitches Total</span>
+                        <strong id="fleet-total-stitches">0 st</strong>
+                    </div>
+                    <div class="shift-stat-box">
+                        <span>Total Mirrors Consumed</span>
+                        <strong id="fleet-total-mirrors">0</strong>
+                    </div>
+                    <div class="shift-stat-box">
+                        <span>Logged Machines</span>
+                        <strong id="fleet-logged-count">0 of 6</strong>
+                    </div>
+                </div>
+                <button type="button" class="btn-commit-full-shift" id="btn-commit-full-shift" onclick="commitFullShiftToDatabase()">
+                    <span>✔</span> Commit Complete Shift Log
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Datalist for Flexible Design Code Suggestions (User can also type any new design) -->
+    <datalist id="design-code-suggestions">
+        <option value="SH-70">SH-70 (Royal Floral Motif)</option>
+        <option value="AB-101">AB-101 (Autumn Flora Border)</option>
+        <option value="D-101">D-101 (Bridal Zari Paisley)</option>
+        <option value="SH-71">SH-71 (Front Floral Jaal)</option>
+        <option value="ZR-202">ZR-202 (Zari Heavy Neck)</option>
+    </datalist>
+
+    <script src="js/config.js"></script>
+    <script src="js/production.js"></script>
+</body>
+</html>

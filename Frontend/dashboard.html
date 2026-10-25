@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - Smart Embroidery Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Chart.js via CDN for smooth Production Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile / Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Left Navigation Sidebar -->
+        <aside class="sidebar" id="app-sidebar">
+            <div>
+                <!-- Brand Header with Direct Collapse Trigger right next to Brand Name -->
+                <div class="brand-header">
+                    <div class="brand-left-group">
+                        <div class="brand-logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                                <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M28 12L24 16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                                <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                                      stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <div class="brand-details">
+                            <h1>ZJI Fashions</h1>
+                            <span class="brand-sub-line">Smart Embroidery</span>
+                            <span class="brand-sub-line">Manufacturing</span>
+                        </div>
+                    </div>
+                    <!-- Sleek Collapse Icon right next to ZJI Fashions -->
+                    <button class="sidebar-collapse-trigger" id="sidebar-collapse-trigger" title="Collapse Sidebar (Hide)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="15 15 12 12 15 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="nav-section">
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="dashboard.html" id="nav-dashboard">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                                        <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+                                    </svg>
+                                </span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="machines.html" id="nav-machines">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path>
+                                    </svg>
+                                </span>
+                                <span>Machines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="production.html" id="nav-production">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 8v8M8 12h8"></path>
+                                    </svg>
+                                </span>
+                                <span>Production Entry</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="inventory.html" id="nav-inventory">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.29 7 12 12.01 20.71 7"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html" id="nav-reports">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Master Data Section -->
+                    <div class="nav-section-title">Master Data</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="suppliers.html" id="nav-suppliers">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </span>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="materials.html" id="nav-materials">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg>
+                                </span>
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="designs.html" id="nav-designs">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="6" cy="6" r="3"></circle>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                        <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                        <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Designs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom: Artistic Quote & User Profile -->
+            <div>
+                <div class="sidebar-art-container">
+                    <div class="sidebar-quote-box">
+                        <div class="sidebar-quote-script">
+                            Better<br>Stitches<br>Bigger<br>Dreams
+                        </div>
+                        <div class="sidebar-quote-dash"></div>
+                    </div>
+                    <svg class="sidebar-leaf-watermark" viewBox="0 0 100 100" fill="none">
+                        <path d="M20 90C40 70 50 40 85 20C85 45 65 75 20 90Z" fill="#1b4332" />
+                        <path d="M35 75C50 60 65 50 85 20" stroke="#1b4332" stroke-width="1.5" />
+                    </svg>
+                </div>
+
+                <div class="sidebar-user-pill" id="sidebar-user-pill" title="Click for Account Options">
+                    <!-- Clean Professional Initials Circle (No random photo) -->
+                    <div class="user-initials-circle admin" id="sidebar-user-avatar">A</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+                        <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+                    </div>
+                    <span class="sidebar-user-arrow">▼</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport" id="main-viewport">
+            <!-- Top Header / Navbar Bar -->
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-navbar" id="sidebar-toggle-navbar" title="Expand Navigation Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="13 9 16 12 13 15"></polyline>
+                        </svg>
+                    </button>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" id="global-search-input" placeholder="Search machines, designs, materials...">
+                    </div>
+                </div>
+
+                <div class="navbar-right">
+                    <!-- Live Date & Time Widget -->
+                    <div class="date-time-widget">
+                        <div class="date-text" id="live-date-label">Wed, 29 Oct 2025</div>
+                        <div class="time-text" id="live-time-label">02:45 PM</div>
+                    </div>
+
+                    <!-- Shift Badge -->
+                    <div class="shift-pill-badge" id="shift-pill-badge">
+                        <div class="shift-icon-sun">☀</div>
+                        <div class="shift-pill-details">
+                            <div class="shift-name" id="topbar-shift-title">Day Shift</div>
+                            <div class="shift-hours" id="topbar-shift-hours">9:00 AM – 9:00 PM</div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Bell -->
+                    <button class="notification-bell-btn" id="notification-bell-btn" title="Notifications">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-count" id="notif-badge">3</span>
+                    </button>
+
+                    <!-- Topbar Profile Pill with Initials (No random photo) -->
+                    <div class="topbar-user-pill" id="topbar-user-pill" title="Click to Switch User / View Profile">
+                        <div class="user-initials-circle admin" id="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <div class="topbar-user-name" id="topbar-user-name">Admin</div>
+                            <div class="topbar-user-role" id="topbar-user-role">Administrator</div>
+                        </div>
+                        <span class="topbar-user-arrow">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Banner (Naturally Blended banner_fabric.jpg Artwork) -->
+            <section class="hero-banner-card">
+                <div class="hero-banner-content">
+                    <div class="hero-banner-tag">SMART EMBROIDERY MANAGEMENT SYSTEM</div>
+                    <h2 class="hero-banner-title" id="greeting-title">Good Afternoon, Admin! 👋</h2>
+                    <p class="hero-banner-sub">Quality stitching today, a stronger tomorrow.</p>
+                </div>
+                <!-- Vivid Embroidery Fabric Artwork (banner_fabric.jpg) with natural gradient melt -->
+                <div class="hero-banner-fabric-img"></div>
+            </section>
+
+            <!-- 4 Metric KPI Cards -->
+            <section class="metrics-row">
+                <!-- 1. Total Machines -->
+                <div class="metric-card machines" data-action="machines">
+                    <div class="metric-card-top">
+                        <div class="metric-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path>
+                            </svg>
+                        </div>
+                        <div class="metric-text-box">
+                            <div class="metric-title">Total Machines</div>
+                            <div class="metric-value" id="kpi-total-machines">6</div>
+                        </div>
+                    </div>
+                    <div class="metric-bottom-row">
+                        <div class="metric-meta">
+                            <span class="dot-online"></span>
+                            <span id="kpi-machines-status">All machines online</span>
+                        </div>
+                        <div class="metric-arrow-btn">→</div>
+                    </div>
+                </div>
+
+                <!-- 2. Today's Production -->
+                <div class="metric-card production" data-action="production">
+                    <div class="metric-card-top">
+                        <div class="metric-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                        </div>
+                        <div class="metric-text-box">
+                            <div class="metric-title">Today's Production</div>
+                            <div class="metric-value" id="kpi-today-production">4,320</div>
+                        </div>
+                    </div>
+                    <div class="metric-bottom-row">
+                        <div class="metric-meta trend-up">
+                            <span>↑ +12%</span>
+                            <span style="color: var(--text-muted); font-weight: 400;">vs. yesterday</span>
+                        </div>
+                        <div class="metric-arrow-btn">→</div>
+                    </div>
+                </div>
+
+                <!-- 3. Current Shift -->
+                <div class="metric-card shift" data-action="shift">
+                    <div class="metric-card-top">
+                        <div class="metric-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="metric-text-box">
+                            <div class="metric-title">Current Shift</div>
+                            <div class="metric-value" id="kpi-current-shift">Day Shift</div>
+                        </div>
+                    </div>
+                    <div class="metric-bottom-row">
+                        <div class="metric-meta">
+                            <span id="kpi-shift-times">9:00 AM – 9:00 PM</span>
+                        </div>
+                        <div class="metric-arrow-btn">→</div>
+                    </div>
+                </div>
+
+                <!-- 4. Low Stock Alerts -->
+                <div class="metric-card alerts" data-action="inventory">
+                    <div class="metric-card-top">
+                        <div class="metric-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="metric-text-box">
+                            <div class="metric-title">Low Stock Alerts</div>
+                            <div class="metric-value" id="kpi-stock-alerts">2</div>
+                        </div>
+                    </div>
+                    <div class="metric-bottom-row">
+                        <div class="metric-meta">
+                            <span>Materials need attention</span>
+                        </div>
+                        <div class="metric-arrow-btn">→</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2-Column Dashboard Grid Layout -->
+            <div class="dashboard-grid-layout">
+                <!-- Left Column (68% width) -->
+                <div class="dashboard-left-col">
+                    <!-- Machines Overview Header -->
+                    <div class="section-header-bar">
+                        <div class="section-title-box">
+                            <h2>Machines Overview</h2>
+                            <p>Monitor each machine's performance and production status</p>
+                        </div>
+                        <a href="machines.html" class="section-link-btn" id="view-all-machines-btn">View All Machines →</a>
+                    </div>
+
+                    <!-- 6 Machines Cards Grid -->
+                    <div class="machines-grid-2col" id="machines-container">
+                        <!-- Machine 01 -->
+                        <div class="machine-card-unit running" data-machine-id="1">
+                            <div class="machine-photo-box">
+                                <img src="assets/images/embroidery-machine-1-blue-12-head.png" alt="Machine 01">
+                            </div>
+                            <div class="machine-details-box">
+                                <div>
+                                    <div class="machine-head-row">
+                                        <div class="machine-title-text">Machine 01</div>
+                                        <span class="machine-status-tag running">Running</span>
+                                    </div>
+                                    <div class="machine-heads-label">18 Heads</div>
+                                    <div class="machine-job-info">
+                                        Design: <strong>SH-70</strong> <span class="machine-job-divider">|</span> Part: <strong>3</strong>
+                                    </div>
+                                </div>
+                                <div class="machine-progress-row">
+                                    <div class="progress-track">
+                                        <div class="progress-fill running" style="width: 68%;"></div>
+                                    </div>
+                                    <span class="machine-progress-pct">68%</span>
+                                    <div class="machine-inspect-arrow" title="Inspect Telemetry">→</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Machine 02 -->
+                        <div class="machine-card-unit running" data-machine-id="2">
+                            <div class="machine-photo-box">
+                                <img src="assets/images/embroidery-machine-2-green-multi-head.png" alt="Machine 02">
+                            </div>
+                            <div class="machine-details-box">
+                                <div>
+                                    <div class="machine-head-row">
+                                        <div class="machine-title-text">Machine 02</div>
+                                        <span class="machine-status-tag running">Running</span>
+                                    </div>
+                                    <div class="machine-heads-label">18 Heads</div>
+                                    <div class="machine-job-info">
+                                        Design: <strong>AB-101</strong> <span class="machine-job-divider">|</span> Part: <strong>5</strong>
+                                    </div>
+                                </div>
+                                <div class="machine-progress-row">
+                                    <div class="progress-track">
+                                        <div class="progress-fill running" style="width: 52%;"></div>
+                                    </div>
+                                    <span class="machine-progress-pct">52%</span>
+                                    <div class="machine-inspect-arrow" title="Inspect Telemetry">→</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Machine 03 -->
+                        <div class="machine-card-unit idle" data-machine-id="3">
+                            <div class="machine-photo-box">
+                                <img src="assets/images/embroidery-machine-3-worlden-multi-head.png" alt="Machine 03">
+                            </div>
+                            <div class="machine-details-box">
+                                <div>
+                                    <div class="machine-head-row">
+                                        <div class="machine-title-text">Machine 03</div>
+                                        <span class="machine-status-tag idle">Idle</span>
+                                    </div>
+                                    <div class="machine-heads-label">24 Heads</div>
+                                    <div class="machine-job-info">
+                                        Design: <strong>D-101</strong> <span class="machine-job-divider">|</span> Part: <strong>2</strong>
+                                    </div>
+                                </div>
+                                <div class="machine-progress-row">
+                                    <div class="progress-track">
+                                        <div class="progress-fill idle" style="width: 0%;"></div>
+                                    </div>
+                                    <span class="machine-progress-pct">0%</span>
+                                    <div class="machine-inspect-arrow" title="Inspect Telemetry">→</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Machine 04 -->
+                        <div class="machine-card-unit running" data-machine-id="4">
+                            <div class="machine-photo-box">
+                                <img src="assets/images/embroidery-machine-4-white-12-head-a.png" alt="Machine 04">
+                            </div>
+                            <div class="machine-details-box">
+                                <div>
+                                    <div class="machine-head-row">
+                                        <div class="machine-title-text">Machine 04</div>
+                                        <span class="machine-status-tag running">Running</span>
+                                    </div>
+                                    <div class="machine-heads-label">24 Heads</div>
+                                    <div class="machine-job-info">
+                                        Design: <strong>SH-70</strong> <span class="machine-job-divider">|</span> Part: <strong>4</strong>
+                                    </div>
+                                </div>
+                                <div class="machine-progress-row">
+                                    <div class="progress-track">
+                                        <div class="progress-fill running" style="width: 73%;"></div>
+                                    </div>
+                                    <span class="machine-progress-pct">73%</span>
+                                    <div class="machine-inspect-arrow" title="Inspect Telemetry">→</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Machine 05 -->
+                        <div class="machine-card-unit setup" data-machine-id="5">
+                            <div class="machine-photo-box">
+                                <img src="assets/images/embroidery-machine-5-white-12-head-b.png" alt="Machine 05">
+                            </div>
+                            <div class="machine-details-box">
+                                <div>
+                                    <div class="machine-head-row">
+                                        <div class="machine-title-text">Machine 05</div>
+                                        <span class="machine-status-tag setup">Setup</span>
+                                    </div>
+                                    <div class="machine-heads-label">24 Heads</div>
+                                    <div class="machine-job-info">
+                                        Design: <strong>AB-101</strong> <span class="machine-job-divider">|</span> Part: <strong>1</strong>
+                                    </div>
+                                </div>
+                                <div class="machine-progress-row">
+                                    <div class="progress-track">
+                                        <div class="progress-fill setup" style="width: 21%;"></div>
+                                    </div>
+                                    <span class="machine-progress-pct">21%</span>
+                                    <div class="machine-inspect-arrow" title="Inspect Telemetry">→</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Machine 06 -->
+                        <div class="machine-card-unit running" data-machine-id="6">
+                            <div class="machine-photo-box">
+                                <img src="assets/images/embroidery-machine-6-jinyu-10-head.png" alt="Machine 06">
+                            </div>
+                            <div class="machine-details-box">
+                                <div>
+                                    <div class="machine-head-row">
+                                        <div class="machine-title-text">Machine 06</div>
+                                        <span class="machine-status-tag running">Running</span>
+                                    </div>
+                                    <div class="machine-heads-label">20 Heads</div>
+                                    <div class="machine-job-info">
+                                        Design: <strong>D-101</strong> <span class="machine-job-divider">|</span> Part: <strong>6</strong>
+                                    </div>
+                                </div>
+                                <div class="machine-progress-row">
+                                    <div class="progress-track">
+                                        <div class="progress-fill running" style="width: 64%;"></div>
+                                    </div>
+                                    <span class="machine-progress-pct">64%</span>
+                                    <div class="machine-inspect-arrow" title="Inspect Telemetry">→</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Production Table -->
+                    <div class="recent-production-card">
+                        <div class="card-title-row">
+                            <div class="card-title-with-icon">
+                                <div class="title-icon-circle">📈</div>
+                                <div>
+                                    <h3>Recent Production</h3>
+                                    <p>Latest production entries from all machines</p>
+                                </div>
+                            </div>
+                            <a href="reports.html" class="section-link-btn" id="view-all-production-btn">View All →</a>
+                        </div>
+
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Date & Time</th>
+                                    <th>Machine</th>
+                                    <th>Design Code</th>
+                                    <th>Part</th>
+                                    <th>Produced</th>
+                                    <th>Target</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-production-tbody">
+                                <tr>
+                                    <td>29 Oct 2025 02:15 PM</td>
+                                    <td class="machine-name">Machine 01</td>
+                                    <td class="design-code">SH-70</td>
+                                    <td>3</td>
+                                    <td>450</td>
+                                    <td>600</td>
+                                    <td><span class="status-badge on-track">On Track</span></td>
+                                </tr>
+                                <tr>
+                                    <td>29 Oct 2025 01:20 PM</td>
+                                    <td class="machine-name">Machine 02</td>
+                                    <td class="design-code">AB-101</td>
+                                    <td>5</td>
+                                    <td>320</td>
+                                    <td>500</td>
+                                    <td><span class="status-badge behind">Behind</span></td>
+                                </tr>
+                                <tr>
+                                    <td>29 Oct 2025 12:45 PM</td>
+                                    <td class="machine-name">Machine 04</td>
+                                    <td class="design-code">SH-70</td>
+                                    <td>4</td>
+                                    <td>680</td>
+                                    <td>800</td>
+                                    <td><span class="status-badge on-track">On Track</span></td>
+                                </tr>
+                                <tr>
+                                    <td>29 Oct 2025 11:30 AM</td>
+                                    <td class="machine-name">Machine 06</td>
+                                    <td class="design-code">D-101</td>
+                                    <td>6</td>
+                                    <td>290</td>
+                                    <td>400</td>
+                                    <td><span class="status-badge behind">Behind</span></td>
+                                </tr>
+                                <tr>
+                                    <td>29 Oct 2025 10:15 AM</td>
+                                    <td class="machine-name">Machine 03</td>
+                                    <td class="design-code">D-101</td>
+                                    <td>2</td>
+                                    <td>540</td>
+                                    <td>600</td>
+                                    <td><span class="status-badge on-track">On Track</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Right Column (32% width) -->
+                <div class="dashboard-right-col">
+                    <!-- 1. Production Analytics Card -->
+                    <div class="analytics-card">
+                        <div class="analytics-header">
+                            <div class="analytics-header-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                                <span>Production Analytics</span>
+                            </div>
+                            <select class="dropdown-pill-select" id="analytics-range-select">
+                                <option>Last 7 Days</option>
+                                <option>Last 30 Days</option>
+                                <option>Current Month</option>
+                            </select>
+                        </div>
+
+                        <div class="analytics-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot actual"></span>
+                                <span>Actual Production</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot target"></span>
+                                <span>Target</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-canvas-box">
+                            <canvas id="productionAnalyticsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- 2. Recent Activity Card -->
+                    <div class="activity-card">
+                        <div class="card-title-row">
+                            <h3 style="font-size: 13.5px; font-weight: 700;">Recent Activity</h3>
+                            <a href="reports.html" class="section-link-btn" id="view-all-activity-btn">View All →</a>
+                        </div>
+
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon-circle green">⚙</div>
+                                <div class="activity-body">
+                                    <h4>Production Completed</h4>
+                                    <p>Machine 01 • SH-70 • Part 3</p>
+                                </div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">2h ago</span>
+                                    <span class="activity-diff green">+450</span>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon-circle blue">📦</div>
+                                <div class="activity-body">
+                                    <h4>Material Received</h4>
+                                    <p>Supplier: Ali Traders • Thread</p>
+                                </div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">4h ago</span>
+                                    <span class="activity-diff blue">+200</span>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon-circle orange">⚠</div>
+                                <div class="activity-body">
+                                    <h4>Low Stock Alert</h4>
+                                    <p>Needles • 120 pcs remaining</p>
+                                </div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">5h ago</span>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon-circle purple">✨</div>
+                                <div class="activity-body">
+                                    <h4>New Design Added</h4>
+                                    <p>AB-101 - Party Code AB</p>
+                                </div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">6h ago</span>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon-circle green">⚙</div>
+                                <div class="activity-body">
+                                    <h4>Production Completed</h4>
+                                    <p>Machine 03 • D-101 • Part 2</p>
+                                </div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">7h ago</span>
+                                    <span class="activity-diff green">+360</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Bottom Promo Card ("Precision in Every Stitch") -->
+                    <div class="promo-stitch-card">
+                        <div class="promo-body">
+                            <div>
+                                <h3>Precision in Every Stitch</h3>
+                                <p>Smart management for a more creative tomorrow.</p>
+                                <div class="promo-pills-row">
+                                    <span class="promo-mini-pill">🎛 6 Machines</span>
+                                    <span class="promo-mini-pill">🧩 7 Parts</span>
+                                    <span class="promo-mini-pill">📶 Real Time Data</span>
+                                </div>
+                            </div>
+                            <a href="reports.html" class="promo-cta-btn" id="promo-view-reports-btn">
+                                <span>View Reports</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <div class="promo-hoop-img" style="background-image: url('assets/images/promo_hoop.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Machine Inspection Modal with Dual Animated Gauges -->
+    <div class="modal-overlay-backdrop" id="machine-inspect-modal">
+        <div class="inspect-modal-box">
+            <div class="inspect-header">
+                <div class="inspect-header-title">
+                    <span class="inspect-machine-badge" id="modal-machine-pill">Machine 01</span>
+                    <h3 id="modal-machine-title">18 Heads Multi-Head Telemetry</h3>
+                </div>
+                <button class="inspect-close-btn" id="inspect-modal-close" title="Close">✕</button>
+            </div>
+
+            <div class="inspect-body">
+                <div class="inspect-visual-row">
+                    <div class="inspect-photo-frame">
+                        <img id="modal-machine-img" src="assets/images/embroidery-machine-1-blue-12-head.png" alt="Machine Preview">
+                    </div>
+                    <div class="inspect-meta-grid">
+                        <div class="inspect-meta-item">
+                            <div class="inspect-meta-label">Current Job</div>
+                            <div class="inspect-meta-val" id="modal-job-val">SH-70 (Part 3)</div>
+                        </div>
+                        <div class="inspect-meta-item">
+                            <div class="inspect-meta-label">Shift Status</div>
+                            <div class="inspect-meta-val" id="modal-status-val" style="color: var(--status-running);">Running</div>
+                        </div>
+                        <div class="inspect-meta-item">
+                            <div class="inspect-meta-label">Completion</div>
+                            <div class="inspect-meta-val" id="modal-progress-val">68%</div>
+                        </div>
+                        <div class="inspect-meta-item">
+                            <div class="inspect-meta-label">Shift Stitches</div>
+                            <div class="inspect-meta-val" id="modal-stitches-val">45,280</div>
+                        </div>
+                        <div class="inspect-meta-item">
+                            <div class="inspect-meta-label">Target / Produced</div>
+                            <div class="inspect-meta-val" id="modal-target-val">450 / 600 pcs</div>
+                        </div>
+                        <div class="inspect-meta-item">
+                            <div class="inspect-meta-label">Active Heads</div>
+                            <div class="inspect-meta-val" id="modal-heads-val">18 / 18 Online</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gauge-meters-grid">
+                    <!-- Gauge 1: Real-time Speed RPM Tachometer -->
+                    <div class="gauge-meter-card">
+                        <div class="gauge-meter-title">⚡ Machine Speed (RPM)</div>
+                        <div class="gauge-svg-container">
+                            <svg viewBox="0 0 180 110" width="180" height="110">
+                                <path d="M 20 95 A 70 70 0 0 1 160 95" fill="none" stroke="#e5ebe6" stroke-width="12" stroke-linecap="round"/>
+                                <path id="rpm-gauge-arc" d="M 20 95 A 70 70 0 0 1 145 50" fill="none" stroke="url(#greenGrad)" stroke-width="12" stroke-linecap="round"/>
+                                <line id="rpm-needle" x1="90" y1="95" x2="135" y2="45" stroke="#163627" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="90" cy="95" r="7" fill="#1b4332"/>
+                                <circle cx="90" cy="95" r="3" fill="#ffffff"/>
+                                <defs>
+                                    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#22c55e" />
+                                        <stop offset="70%" stop-color="#16a34a" />
+                                        <stop offset="100%" stop-color="#15803d" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="gauge-needle-center">
+                                <div class="gauge-readout-val" id="modal-rpm-val">850</div>
+                                <div class="gauge-readout-unit">RPM (Max 1000)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gauge 2: Production Efficiency Meter -->
+                    <div class="gauge-meter-card">
+                        <div class="gauge-meter-title">🎯 Efficiency & Yield</div>
+                        <div class="gauge-svg-container">
+                            <svg viewBox="0 0 180 110" width="180" height="110">
+                                <path d="M 20 95 A 70 70 0 0 1 160 95" fill="none" stroke="#e5ebe6" stroke-width="12" stroke-linecap="round"/>
+                                <path id="eff-gauge-arc" d="M 20 95 A 70 70 0 0 1 152 75" fill="none" stroke="#2563eb" stroke-width="12" stroke-linecap="round"/>
+                                <line id="eff-needle" x1="90" y1="95" x2="142" y2="68" stroke="#1e3a8a" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="90" cy="95" r="7" fill="#1d4ed8"/>
+                                <circle cx="90" cy="95" r="3" fill="#ffffff"/>
+                            </svg>
+                            <div class="gauge-needle-center">
+                                <div class="gauge-readout-val" id="modal-eff-val" style="color: #2563eb;">92%</div>
+                                <div class="gauge-readout-unit">Operational Yield</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breakdown-row">
+                    <div class="breakdown-box">
+                        <h4>🧵 Shift Raw Material Consumed</h4>
+                        <ul class="breakdown-list">
+                            <li><span>Poly Silk Thread #40</span> <span id="mat-thread-val">18 Cones</span></li>
+                            <li><span>Tearaway Fusing Backing</span> <span id="mat-fusing-val">24 Meters</span></li>
+                            <li><span>Groz-Beckert Needles</span> <span id="mat-needles-val">3 Replaced</span></li>
+                            <li><span>Metallic Gold Zari Thread</span> <span id="mat-zari-val">2 Cones</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="breakdown-box">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <h4>Heads Status Matrix</h4>
+                            <span style="font-size: 10px; color: var(--status-running); font-weight: 700;">ALL 100% HEALTH</span>
+                        </div>
+                        <div class="heads-matrix-grid" id="heads-matrix-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Interceptor & Sign-In / Register Modal (Floating with Vertical Margins) -->
+    <div class="modal-overlay-backdrop" id="auth-modal">
+        <div class="auth-modal-box">
+            <div class="auth-modal-header">
+                <div class="auth-brand-logo">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                        <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                        <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                              stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                    </svg>
+                </div>
+                <h2>ZJI Fashions</h2>
+                <p>Sign in to access machine controls, shift logs, and factory telemetry</p>
+                <button class="inspect-close-btn" id="auth-modal-close" style="position: absolute; top: 16px; right: 16px;">✕</button>
+            </div>
+
+            <!-- Tabs: Sign In / Create Account -->
+            <div class="auth-tabs-row">
+                <button class="auth-tab-btn active" id="tab-signin-btn">Sign In</button>
+                <button class="auth-tab-btn" id="tab-register-btn">Create Account</button>
+            </div>
+
+            <div class="auth-modal-body">
+                <div class="auth-quick-banner">
+                    <span>🔒</span>
+                    <span>Please sign in with your credentials or use 1-click demo access below.</span>
+                </div>
+
+                <!-- Sign In Form -->
+                <form id="auth-signin-form">
+                    <div class="form-group">
+                        <label class="form-label">Username or Factory ID</label>
+                        <input type="text" class="form-control" id="auth-username" value="admin" placeholder="Enter username (e.g. admin)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="auth-password" value="admin123" placeholder="Enter password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Role</label>
+                        <select class="form-control" id="auth-role">
+                            <option value="admin">Administrator / Factory Head</option>
+                            <option value="operator">Shift Supervisor / Operator</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="auth-submit-btn" id="submit-signin-btn">Sign In to Command Center</button>
+                </form>
+
+                <!-- Quick Demo 1-Click Buttons -->
+                <div class="quick-demo-buttons">
+                    <button class="demo-account-btn" id="quick-demo-admin" type="button">⚡ Quick Login as Admin</button>
+                    <button class="demo-account-btn" id="quick-demo-operator" type="button">🔧 Quick Login as Operator</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Profile Drawer Modal -->
+    <div class="modal-overlay-backdrop" id="user-profile-modal">
+        <div class="auth-modal-box">
+            <div class="auth-modal-header">
+                <h2>Account Settings</h2>
+                <p>Logged in session profile</p>
+                <button class="inspect-close-btn" id="profile-modal-close" style="position: absolute; top: 16px; right: 16px;">✕</button>
+            </div>
+            <div class="auth-modal-body">
+                <div class="profile-details-card">
+                    <div class="user-initials-circle admin" id="profile-card-avatar" style="width: 48px; height: 48px; font-size: 18px;">A</div>
+                    <div>
+                        <h3 style="font-size: 15px; font-weight: 700;" id="profile-card-name">Admin</h3>
+                        <p style="font-size: 11.5px; color: var(--text-muted);" id="profile-card-role">System Administrator</p>
+                        <span class="status-badge on-track" style="margin-top: 4px;">● Session Active</span>
+                    </div>
+                </div>
+
+                <div class="profile-actions-list">
+                    <a href="production.html" class="profile-action-btn">
+                        <span>⚡ Production Shift Logger</span>
+                        <span>→</span>
+                    </a>
+                    <a href="reports.html" class="profile-action-btn">
+                        <span>📑 Production & Stitches Audit</span>
+                        <span>→</span>
+                    </a>
+                    <a href="inventory.html" class="profile-action-btn">
+                        <span>📦 Raw Materials & Stock Management</span>
+                        <span>→</span>
+                    </a>
+                    <button class="profile-action-btn logout" id="logout-btn" type="button">
+                        <span>🚪 Sign Out (Return to Guest Preview)</span>
+                        <span>✕</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -28,8 +28,8 @@ CREATE TABLE dbo.ProductionDetails
 
     CONSTRAINT CK_Detail_Part
         CHECK (PartType IN
-        (N'FRONT', N'BACK', N'POCKET', N'TAKH',
-         N'DUPATTA', N'SKIN', N'SHALWAR')),
+        (N'FRONT', N'BACK', N'POCKET', N'TUK', N'TAKH',
+         N'DUPATTA', N'ASTEEN', N'SKIN', N'SHALWAR')),
 
     CONSTRAINT CK_Detail_Stitches
         CHECK (StitchCount >= 0),
