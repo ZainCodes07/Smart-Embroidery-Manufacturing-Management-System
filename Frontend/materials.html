@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - Raw Materials Catalogue | Master Data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile / Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Left Navigation Sidebar -->
+        <aside class="sidebar" id="app-sidebar">
+            <div>
+                <!-- Brand Header with Direct Collapse Trigger -->
+                <div class="brand-header">
+                    <div class="brand-left-group">
+                        <div class="brand-logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                                <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M28 12L24 16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                                <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                                      stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <div class="brand-details">
+                            <h1>ZJI Fashions</h1>
+                            <span class="brand-sub-line">Smart Embroidery</span>
+                            <span class="brand-sub-line">Manufacturing</span>
+                        </div>
+                    </div>
+                    <button class="sidebar-collapse-trigger" id="sidebar-collapse-trigger" title="Collapse Sidebar (Hide)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="15 15 12 12 15 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="nav-section">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" id="nav-dashboard">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                                        <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+                                    </svg>
+                                </span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="machines.html" id="nav-machines">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path>
+                                    </svg>
+                                </span>
+                                <span>Machines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="production.html" id="nav-production">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 8v8M8 12h8"></path>
+                                    </svg>
+                                </span>
+                                <span>Production Entry</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="inventory.html" id="nav-inventory">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.29 7 12 12.01 20.71 7"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html" id="nav-reports">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Master Data Section -->
+                    <div class="nav-section-title">Master Data</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="suppliers.html" id="nav-suppliers">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </span>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="materials.html" id="nav-materials">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg>
+                                </span>
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="designs.html" id="nav-designs">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="6" cy="6" r="3"></circle>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                        <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                        <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Designs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom: Quote & User Profile -->
+            <div>
+                <div class="sidebar-art-container">
+                    <div class="sidebar-quote-box">
+                        <div class="sidebar-quote-script">Better<br>Stitches<br>Bigger<br>Dreams</div>
+                        <div class="sidebar-quote-dash"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-user-pill" id="sidebar-user-pill" title="Click for Account Options">
+                    <div class="user-initials-circle admin" id="sidebar-user-avatar">A</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+                        <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+                    </div>
+                    <span class="sidebar-user-arrow">▼</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport" id="main-viewport">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-navbar" id="sidebar-toggle-navbar" title="Expand Navigation Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="13 9 16 12 13 15"></polyline>
+                        </svg>
+                    </button>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search materials, variants, suppliers, SKU...">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <!-- Live Date & Time Widget -->
+                    <div class="date-time-widget">
+                        <div class="date-text" id="live-date-label">Wed, 29 Oct 2025</div>
+                        <div class="time-text" id="live-time-label">02:45 PM</div>
+                    </div>
+
+                    <!-- Shift Badge -->
+                    <div class="shift-pill-badge" id="shift-pill-badge">
+                        <div class="shift-icon-sun">☀</div>
+                        <div class="shift-pill-details">
+                            <div class="shift-name" id="topbar-shift-title">Day Shift</div>
+                            <div class="shift-hours" id="topbar-shift-hours">9:00 AM – 9:00 PM</div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <button class="notification-bell-btn" id="notification-bell-btn" title="Notifications">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-count" id="notif-badge">3</span>
+                    </button>
+
+                    <!-- Topbar Profile Pill with Initials -->
+                    <div class="topbar-user-pill" id="topbar-user-pill" title="Click to Switch User / View Profile">
+                        <div class="user-initials-circle admin" id="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <div class="topbar-user-name" id="topbar-user-name">Admin</div>
+                            <div class="topbar-user-role" id="topbar-user-role">Administrator</div>
+                        </div>
+                        <span class="topbar-user-arrow">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Title Banner -->
+            <div class="page-title-banner">
+                <div class="page-title-text">
+                    <h1>Raw Materials Master Catalogue</h1>
+                    <p>Track all manufacturing materials mapped to verified Karachi suppliers (Multiple colors supported)</p>
+                </div>
+                <button class="btn btn-primary" id="open-add-material-btn">
+                    <span>+</span> Add Raw Material
+                </button>
+            </div>
+
+            <!-- Material Category Summary Cards (6 Cards with Correct Suppliers) -->
+            <div class="master-grid-3col">
+                <!-- Category 1: Bobbin Cones Only (Ali Traders) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">⚪</div>
+                            <div>
+                                <h3 class="master-card-title">Bobbin Cones</h3>
+                                <p class="master-card-sub">Multiple Colors (Black, White, etc.)</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Adequate</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Category / Unit:</span> <strong>THREAD / CONE</strong></li>
+                        <li><span>Colors / Variants:</span> <strong>Multiple Colors (Black, White, etc.)</strong></li>
+                        <li><span>Current Stock:</span> <strong>420 Cones (240 Black, 180 White)</strong></li>
+                        <li><span>Primary Supplier:</span> <strong>Ali Traders (Karachi)</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: Normal Thread (Al Raheem Traders) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">🧵</div>
+                            <div>
+                                <h3 class="master-card-title">Normal Thread</h3>
+                                <p class="master-card-sub">Multiple Colors (Red, Green, etc.)</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Adequate</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Category / Unit:</span> <strong>THREAD / CONE</strong></li>
+                        <li><span>Colors / Variants:</span> <strong>Multiple Colors (Red, Green, Navy, etc.)</strong></li>
+                        <li><span>Current Stock:</span> <strong>340 Cones (190 Red, 150 Green)</strong></li>
+                        <li><span>Primary Supplier:</span> <strong>Al Raheem Traders (Karachi)</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Metallic Thread (Fashion) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">✨</div>
+                            <div>
+                                <h3 class="master-card-title">Metallic Thread</h3>
+                                <p class="master-card-sub">Multiple Colors (Golden, Pink, etc.)</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Adequate</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Category / Unit:</span> <strong>THREAD / CONE</strong></li>
+                        <li><span>Colors / Variants:</span> <strong>Multiple Colors (Golden, Pink, Silver, etc.)</strong></li>
+                        <li><span>Current Stock:</span> <strong>185 Cones (110 Gold, 75 Pink)</strong></li>
+                        <li><span>Primary Supplier:</span> <strong>Fashion (Karachi)</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: Fusing Rolls & Needles (Hasan Traders) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">📜</div>
+                            <div>
+                                <h3 class="master-card-title">Fusing Rolls & Needles</h3>
+                                <p class="master-card-sub">1035 MM, 30 GM Rolls & DBxK5</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Adequate</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Category / Unit:</span> <strong>FUSING (Rolls) & NEEDLE (Pieces)</strong></li>
+                        <li><span>Variants:</span> <strong>1035 MM, 30 GM & Needles (Small/Large)</strong></li>
+                        <li><span>Current Stock:</span> <strong>24 Rolls & 350 Needles</strong></li>
+                        <li><span>Primary Supplier:</span> <strong>Hasan Traders (Karachi)</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Category 5: Craft Mirrors (Nawab Traders) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">🪞</div>
+                            <div>
+                                <h3 class="master-card-title">Craft Mirrors</h3>
+                                <p class="master-card-sub">Precision Cut Embroidery Mirrors</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Adequate</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Category / Unit:</span> <strong>MIRROR / KG</strong></li>
+                        <li><span>Variants:</span> <strong>Square, Diamond, Circle</strong></li>
+                        <li><span>Current Stock:</span> <strong>65 Kg Total (25 Sq, 20 Dia, 20 Cir)</strong></li>
+                        <li><span>Primary Supplier:</span> <strong>Nawab Traders (Karachi)</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Category 6: Adhesive Glue (Yusuf Traders) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">💧</div>
+                            <div>
+                                <h3 class="master-card-title">Textile Craft Glue</h3>
+                                <p class="master-card-sub">Fabric Adhesive Solution</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Adequate</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Category / Unit:</span> <strong>GLUE / LITER</strong></li>
+                        <li><span>Variants:</span> <strong>Standard Liter</strong></li>
+                        <li><span>Current Stock:</span> <strong>18 Liters</strong></li>
+                        <li><span>Primary Supplier:</span> <strong>Yusuf Traders (Karachi)</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Material Ledger Table: All Materials Cleanly Mapped -->
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <h3>Raw Material Inventory Ledger (14 Materials)</h3>
+                    <span style="font-size: 11.5px; color: var(--text-muted);">Exact Database Items Mapped to Verified Suppliers</span>
+                </div>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>SKU Code</th>
+                            <th>Material Name</th>
+                            <th>Variant / Color</th>
+                            <th>Category</th>
+                            <th>Unit</th>
+                            <th>Verified Karachi Supplier</th>
+                            <th>Available Balance</th>
+                            <th>Alert Threshold</th>
+                            <th>Stock Health</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="design-code">MAT-BOB-01</td>
+                            <td class="machine-name">Bobbin Cone</td>
+                            <td>Black</td>
+                            <td><span class="status-badge on-track">THREAD</span></td>
+                            <td>CONE</td>
+                            <td><strong>Ali Traders</strong></td>
+                            <td><strong>240</strong></td>
+                            <td>60</td>
+                            <td><span class="status-badge on-track">Optimal (80%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-BOB-02</td>
+                            <td class="machine-name">Bobbin Cone</td>
+                            <td>White</td>
+                            <td><span class="status-badge on-track">THREAD</span></td>
+                            <td>CONE</td>
+                            <td><strong>Ali Traders</strong></td>
+                            <td><strong>180</strong></td>
+                            <td>50</td>
+                            <td><span class="status-badge on-track">Optimal (78%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-THR-03</td>
+                            <td class="machine-name">Normal Thread</td>
+                            <td>Red</td>
+                            <td><span class="status-badge on-track">THREAD</span></td>
+                            <td>CONE</td>
+                            <td><strong>Al Raheem Traders</strong></td>
+                            <td><strong>190</strong></td>
+                            <td>40</td>
+                            <td><span class="status-badge on-track">Optimal (82%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-THR-04</td>
+                            <td class="machine-name">Normal Thread</td>
+                            <td>Green</td>
+                            <td><span class="status-badge on-track">THREAD</span></td>
+                            <td>CONE</td>
+                            <td><strong>Al Raheem Traders</strong></td>
+                            <td><strong>150</strong></td>
+                            <td>40</td>
+                            <td><span class="status-badge on-track">Optimal (75%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-MET-05</td>
+                            <td class="machine-name">Metallic Thread</td>
+                            <td>Golden</td>
+                            <td><span class="status-badge on-track">THREAD</span></td>
+                            <td>CONE</td>
+                            <td><strong>Fashion</strong></td>
+                            <td><strong>110</strong></td>
+                            <td>30</td>
+                            <td><span class="status-badge on-track">Optimal (73%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-MET-06</td>
+                            <td class="machine-name">Metallic Thread</td>
+                            <td>Pink</td>
+                            <td><span class="status-badge on-track">THREAD</span></td>
+                            <td>CONE</td>
+                            <td><strong>Fashion</strong></td>
+                            <td><strong>75</strong></td>
+                            <td>25</td>
+                            <td><span class="status-badge on-track">Optimal (75%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-FUS-07</td>
+                            <td class="machine-name">Fusing Roll</td>
+                            <td>1035 MM</td>
+                            <td><span class="status-badge on-track">FUSING</span></td>
+                            <td>ROLL</td>
+                            <td><strong>Hasan Traders</strong></td>
+                            <td><strong>14</strong></td>
+                            <td>5</td>
+                            <td><span class="status-badge on-track">Optimal (70%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-FUS-08</td>
+                            <td class="machine-name">Fusing Roll</td>
+                            <td>30 GM</td>
+                            <td><span class="status-badge on-track">FUSING</span></td>
+                            <td>ROLL</td>
+                            <td><strong>Hasan Traders</strong></td>
+                            <td><strong>10</strong></td>
+                            <td>4</td>
+                            <td><span class="status-badge on-track">Optimal (71%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-NDL-09</td>
+                            <td class="machine-name">Needle</td>
+                            <td>Small Packet</td>
+                            <td><span class="status-badge behind">NEEDLE</span></td>
+                            <td>PIECE</td>
+                            <td><strong>Hasan Traders</strong></td>
+                            <td><strong style="color: var(--status-behind);">150</strong></td>
+                            <td>200</td>
+                            <td><span class="status-badge behind">Low Stock (42%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-NDL-10</td>
+                            <td class="machine-name">Needle</td>
+                            <td>Large Packet</td>
+                            <td><span class="status-badge behind">NEEDLE</span></td>
+                            <td>PIECE</td>
+                            <td><strong>Hasan Traders</strong></td>
+                            <td><strong style="color: var(--status-behind);">200</strong></td>
+                            <td>250</td>
+                            <td><span class="status-badge behind">Low Stock (44%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-MIR-11</td>
+                            <td class="machine-name">Mirror</td>
+                            <td>Square</td>
+                            <td><span class="status-badge on-track">MIRROR</span></td>
+                            <td>KG</td>
+                            <td><strong>Nawab Traders</strong></td>
+                            <td><strong>25</strong></td>
+                            <td>10</td>
+                            <td><span class="status-badge on-track">Optimal (71%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-MIR-12</td>
+                            <td class="machine-name">Mirror</td>
+                            <td>Diamond</td>
+                            <td><span class="status-badge on-track">MIRROR</span></td>
+                            <td>KG</td>
+                            <td><strong>Nawab Traders</strong></td>
+                            <td><strong>20</strong></td>
+                            <td>10</td>
+                            <td><span class="status-badge on-track">Optimal (67%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-MIR-13</td>
+                            <td class="machine-name">Mirror</td>
+                            <td>Circle</td>
+                            <td><span class="status-badge on-track">MIRROR</span></td>
+                            <td>KG</td>
+                            <td><strong>Nawab Traders</strong></td>
+                            <td><strong>20</strong></td>
+                            <td>10</td>
+                            <td><span class="status-badge on-track">Optimal (67%)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="design-code">MAT-GLU-14</td>
+                            <td class="machine-name">Glue</td>
+                            <td>Standard</td>
+                            <td><span class="status-badge on-track">GLUE</span></td>
+                            <td>LITER</td>
+                            <td><strong>Yusuf Traders</strong></td>
+                            <td><strong>18</strong></td>
+                            <td>5</td>
+                            <td><span class="status-badge on-track">Optimal (78%)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal to Add New Material -->
+    <div class="modal-overlay-backdrop" id="add-material-modal">
+        <div class="auth-modal-box" style="max-width: 520px;">
+            <div class="inspect-header">
+                <h3>Add New Raw Material Item</h3>
+                <button class="inspect-close-btn" id="close-material-modal">✕</button>
+            </div>
+            <div class="auth-modal-body">
+                <form id="material-form">
+                    <div class="form-grid-2col">
+                        <div class="form-group">
+                            <label class="form-label">Material Name</label>
+                            <input type="text" class="form-control" placeholder="e.g. Normal Thread" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Variant / Color</label>
+                            <input type="text" class="form-control" placeholder="e.g. Red, Black, Golden" required>
+                        </div>
+                    </div>
+                    <div class="form-grid-2col">
+                        <div class="form-group">
+                            <label class="form-label">Category</label>
+                            <select class="form-control">
+                                <option value="THREAD">THREAD</option>
+                                <option value="FUSING">FUSING</option>
+                                <option value="NEEDLE">NEEDLE</option>
+                                <option value="MIRROR">MIRROR</option>
+                                <option value="GLUE">GLUE</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Base Unit</label>
+                            <select class="form-control">
+                                <option value="CONE">CONE</option>
+                                <option value="ROLL">ROLL</option>
+                                <option value="PIECE">PIECE</option>
+                                <option value="KG">KG</option>
+                                <option value="LITER">LITER</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Primary Karachi Supplier</label>
+                        <select class="form-control">
+                            <option value="Ali Traders">Ali Traders (Bobbin Cones)</option>
+                            <option value="Al Raheem Traders">Al Raheem Traders (Normal Thread)</option>
+                            <option value="Fashion">Fashion (Metallic Thread)</option>
+                            <option value="Hasan Traders">Hasan Traders (Fusing & Needles)</option>
+                            <option value="Nawab Traders">Nawab Traders (Craft Mirrors)</option>
+                            <option value="Yusuf Traders">Yusuf Traders (Glue Standard)</option>
+                        </select>
+                    </div>
+                    <div class="form-grid-2col">
+                        <div class="form-group">
+                            <label class="form-label">Initial Stock Quantity</label>
+                            <input type="number" class="form-control" placeholder="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Low Stock Alert Level</label>
+                            <input type="number" class="form-control" placeholder="25" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding: 12px;">Save Material to Inventory</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+        const modal = document.getElementById('add-material-modal');
+        const openBtn = document.getElementById('open-add-material-btn');
+        const closeBtn = document.getElementById('close-material-modal');
+        if (openBtn) openBtn.onclick = () => modal.classList.add('active');
+        if (closeBtn) closeBtn.onclick = () => modal.classList.remove('active');
+        if (modal) {
+            modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('active'); };
+        }
+        const matForm = document.getElementById('material-form');
+        if (matForm) {
+            matForm.onsubmit = (e) => {
+                e.preventDefault();
+                showNotification('New Material Item Added to Database Catalogue!', 'success');
+                modal.classList.remove('active');
+            };
+        }
+    </script>
+</body>
+</html>

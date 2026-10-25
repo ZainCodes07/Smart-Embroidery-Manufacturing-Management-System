@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - Embroidery Designs Studio | Master Data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile / Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Left Navigation Sidebar -->
+        <aside class="sidebar" id="app-sidebar">
+            <div>
+                <!-- Brand Header with Direct Collapse Trigger -->
+                <div class="brand-header">
+                    <div class="brand-left-group">
+                        <div class="brand-logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                                <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M28 12L24 16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                                <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                                      stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <div class="brand-details">
+                            <h1>ZJI Fashions</h1>
+                            <span class="brand-sub-line">Smart Embroidery</span>
+                            <span class="brand-sub-line">Manufacturing</span>
+                        </div>
+                    </div>
+                    <button class="sidebar-collapse-trigger" id="sidebar-collapse-trigger" title="Collapse Sidebar (Hide)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="15 15 12 12 15 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="nav-section">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" id="nav-dashboard">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                                        <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+                                    </svg>
+                                </span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="machines.html" id="nav-machines">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path>
+                                    </svg>
+                                </span>
+                                <span>Machines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="production.html" id="nav-production">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 8v8M8 12h8"></path>
+                                    </svg>
+                                </span>
+                                <span>Production Entry</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="inventory.html" id="nav-inventory">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.29 7 12 12.01 20.71 7"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html" id="nav-reports">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Master Data Section -->
+                    <div class="nav-section-title">Master Data</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="suppliers.html" id="nav-suppliers">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </span>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="materials.html" id="nav-materials">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg>
+                                </span>
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="designs.html" id="nav-designs">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="6" cy="6" r="3"></circle>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                        <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                        <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Designs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom: Quote & User Profile -->
+            <div>
+                <div class="sidebar-art-container">
+                    <div class="sidebar-quote-box">
+                        <div class="sidebar-quote-script">Better<br>Stitches<br>Bigger<br>Dreams</div>
+                        <div class="sidebar-quote-dash"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-user-pill" id="sidebar-user-pill" title="Click for Account Options">
+                    <div class="user-initials-circle admin" id="sidebar-user-avatar">A</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+                        <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+                    </div>
+                    <span class="sidebar-user-arrow">▼</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport" id="main-viewport">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-navbar" id="sidebar-toggle-navbar" title="Expand Navigation Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="13 9 16 12 13 15"></polyline>
+                        </svg>
+                    </button>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search designs, codes, party, parts...">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <!-- Live Date & Time Widget -->
+                    <div class="date-time-widget">
+                        <div class="date-text" id="live-date-label">Wed, 29 Oct 2025</div>
+                        <div class="time-text" id="live-time-label">02:45 PM</div>
+                    </div>
+
+                    <!-- Shift Badge -->
+                    <div class="shift-pill-badge" id="shift-pill-badge">
+                        <div class="shift-icon-sun">☀</div>
+                        <div class="shift-pill-details">
+                            <div class="shift-name" id="topbar-shift-title">Day Shift</div>
+                            <div class="shift-hours" id="topbar-shift-hours">9:00 AM – 9:00 PM</div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <button class="notification-bell-btn" id="notification-bell-btn" title="Notifications">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-count" id="notif-badge">3</span>
+                    </button>
+
+                    <!-- Topbar Profile Pill with Initials -->
+                    <div class="topbar-user-pill" id="topbar-user-pill" title="Click to Switch User / View Profile">
+                        <div class="user-initials-circle admin" id="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <div class="topbar-user-name" id="topbar-user-name">Admin</div>
+                            <div class="topbar-user-role" id="topbar-user-role">Administrator</div>
+                        </div>
+                        <span class="topbar-user-arrow">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Title Banner -->
+            <div class="page-title-banner">
+                <div class="page-title-text">
+                    <h1>Embroidery Designs Studio</h1>
+                    <p>Register new designs, track stitch densities, and manage multi-part breakdowns</p>
+                </div>
+                <a href="#fast-design-form" class="btn btn-primary" id="open-add-design-btn">
+                    <span>+</span> Register New Design
+                </a>
+            </div>
+
+            <!-- Design Input Form Section -->
+            <div class="content-card" id="design-entry-card">
+                <div class="card-header-bar">
+                    <div>
+                        <h3>⚡ Multi-Part Design Registration Studio</h3>
+                        <span style="font-size: 11.5px; color: var(--text-muted);">Assign Party Code, Design Number & Item-by-Item Stitches & Mirrors</span>
+                    </div>
+                    <div id="live-code-badge" class="master-tag-pill" style="font-size: 12px; font-weight: 700; background: #eaf4ed; color: var(--brand-forest); border: 1px solid #bbf7d0;">
+                        Code: <span id="code-preview-text">SH-70</span>
+                    </div>
+                </div>
+
+                <form id="fast-design-form">
+                    <!-- Top Row: Name, Party Code, Design Number -->
+                    <div class="form-grid-3col">
+                        <div class="form-group">
+                            <label class="form-label">Design Name (Optional)</label>
+                            <input type="text" id="input-design-name" class="form-control" placeholder="e.g. Royal Floral Jaal Motif">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Party Code (e.g. SH, AB, D)</label>
+                            <input type="text" id="input-party-code" class="form-control" placeholder="SH" maxlength="10" value="SH" required style="font-weight: 700; text-transform: uppercase;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Design Number / Code</label>
+                            <input type="text" id="input-design-code" class="form-control" placeholder="70" value="70" required style="font-weight: 700;">
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Multi-Part Breakdown Section -->
+                    <div class="part-breakdown-box">
+                        <div class="part-breakdown-header">
+                            <div class="part-breakdown-title">
+                                <span>🧩</span> Parts / Items Breakdown
+                                <span style="font-size: 11px; font-weight: 500; color: var(--text-muted);">(Front, Back, Tuk, Asteen, Dupatta, Pocket, Shalwar)</span>
+                            </div>
+                            <div class="part-preset-group">
+                                <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">Presets:</span>
+                                <button type="button" class="part-preset-btn" onclick="applyPartsPreset(3)">3 Parts (Suit)</button>
+                                <button type="button" class="part-preset-btn" onclick="applyPartsPreset(4)">4 Parts (Standard)</button>
+                                <button type="button" class="part-preset-btn" onclick="applyPartsPreset(5)">5 Parts (Heavy)</button>
+                                <button type="button" class="part-preset-btn" onclick="applyPartsPreset(7)">7 Parts (Full Set)</button>
+                                <button type="button" class="part-preset-btn" onclick="addNewPartRow()" style="background: var(--brand-forest); color: #fff; border-color: var(--brand-forest);">+ Add Part</button>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Part Rows Container -->
+                        <div class="part-rows-container" id="part-rows-container">
+                            <!-- Injected via JavaScript -->
+                        </div>
+
+                        <!-- Live Auto-Sum Totals Strip -->
+                        <div class="design-totals-strip">
+                            <div class="design-totals-item">
+                                <span>Total Parts:</span>
+                                <strong id="totals-parts-count">4 Parts</strong>
+                            </div>
+                            <div class="design-totals-item">
+                                <span>Total Design Stitches:</span>
+                                <strong id="totals-design-stitches" style="color: var(--brand-forest);">54,800 st</strong>
+                            </div>
+                            <div class="design-totals-item">
+                                <span>Total Mirrors / Head:</span>
+                                <strong id="totals-design-mirrors">16 Mirrors</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; align-items: center; margin-top: 16px; flex-wrap: wrap;">
+                        <button type="submit" class="btn btn-primary" style="padding: 12px 28px; font-weight: 700;">
+                            <span>💾</span> Save & Register Design
+                        </button>
+                        <span style="font-size: 11.5px; color: var(--text-muted);">Will appear in active gallery and be available across production shift loggers</span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Registered Designs Gallery Grid (Database Sample Designs) -->
+            <div class="card-header-bar" style="margin-top: 10px;">
+                <h3 style="font-size: 16px; font-weight: 700;">Active Design Gallery (ZJI Production Floor)</h3>
+                <span style="font-size: 11.5px; color: var(--text-muted);">Database Verified Patterns with Multi-Part Breakdown</span>
+            </div>
+
+            <div class="designs-gallery-grid" id="designs-grid-container">
+                <!-- Loaded dynamically via JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+        // 7 Standard Embroidery Items
+        const STANDARD_ITEMS = [
+            "Front",
+            "Back",
+            "Tuk",
+            "Asteen",
+            "Dupatta",
+            "Pocket",
+            "Shalwar"
+        ];
+
+        // Default Presets for rapid entry
+        const PRESETS = {
+            3: [
+                { item: "Front", stitches: 24000, mirrors: 0 },
+                { item: "Back", stitches: 10000, mirrors: 0 },
+                { item: "Asteen", stitches: 12000, mirrors: 0 }
+            ],
+            4: [
+                { item: "Front", stitches: 26000, mirrors: 8 },
+                { item: "Back", stitches: 12000, mirrors: 0 },
+                { item: "Tuk", stitches: 6800, mirrors: 4 },
+                { item: "Asteen", stitches: 10000, mirrors: 4 }
+            ],
+            5: [
+                { item: "Front", stitches: 28000, mirrors: 12 },
+                { item: "Back", stitches: 14000, mirrors: 0 },
+                { item: "Dupatta", stitches: 16900, mirrors: 8 },
+                { item: "Tuk", stitches: 5000, mirrors: 4 },
+                { item: "Pocket", stitches: 5000, mirrors: 0 }
+            ],
+            7: [
+                { item: "Front", stitches: 25000, mirrors: 8 },
+                { item: "Back", stitches: 12000, mirrors: 0 },
+                { item: "Tuk", stitches: 6000, mirrors: 4 },
+                { item: "Asteen", stitches: 10000, mirrors: 4 },
+                { item: "Dupatta", stitches: 18000, mirrors: 6 },
+                { item: "Pocket", stitches: 4000, mirrors: 0 },
+                { item: "Shalwar", stitches: 8000, mirrors: 0 }
+            ]
+        };
+
+        // In-memory working parts list for the form
+        let currentFormParts = JSON.parse(JSON.stringify(PRESETS[4]));
+
+        // Preloaded Initial Active Floor Designs
+        const INITIAL_DESIGNS = [
+            {
+                code: "SH-70",
+                party: "SH",
+                name: "Royal Floral Neck Motif",
+                image: "assets/images/promo_hoop.jpg",
+                activeOn: "Machine 01, 04",
+                parts: [
+                    { item: "Front", stitches: 26000, mirrors: 8 },
+                    { item: "Back", stitches: 12000, mirrors: 0 },
+                    { item: "Tuk", stitches: 6800, mirrors: 4 },
+                    { item: "Asteen", stitches: 10000, mirrors: 4 }
+                ]
+            },
+            {
+                code: "AB-101",
+                party: "AB",
+                name: "Classic Autumn Flora Border",
+                image: "assets/images/banner_fabric.jpg",
+                activeOn: "Machine 02, 05",
+                parts: [
+                    { item: "Front", stitches: 22000, mirrors: 0 },
+                    { item: "Back", stitches: 8200, mirrors: 0 },
+                    { item: "Asteen", stitches: 12000, mirrors: 0 }
+                ]
+            },
+            {
+                code: "D-101",
+                party: "D",
+                name: "Bridal Zari Paisley Border",
+                image: "assets/images/promo_hoop.jpg",
+                activeOn: "Machine 03, 06",
+                parts: [
+                    { item: "Front", stitches: 28000, mirrors: 12 },
+                    { item: "Back", stitches: 14000, mirrors: 0 },
+                    { item: "Dupatta", stitches: 16900, mirrors: 8 },
+                    { item: "Tuk", stitches: 5000, mirrors: 4 },
+                    { item: "Pocket", stitches: 5000, mirrors: 0 }
+                ]
+            }
+        ];
+
+        // Render part rows in the registration form
+        function renderFormPartRows() {
+            const container = document.getElementById('part-rows-container');
+            if (!container) return;
+
+            container.innerHTML = currentFormParts.map((part, index) => `
+                <div class="part-input-row" data-index="${index}">
+                    <div class="part-num-pill">Part ${index + 1}</div>
+                    <div class="form-group">
+                        <label>Item / Type</label>
+                        <select class="form-control part-item-select" onchange="updatePartField(${index}, 'item', this.value)">
+                            ${STANDARD_ITEMS.map(it => `
+                                <option value="${it}" ${it === part.item ? 'selected' : ''}>${it}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Stitches</label>
+                        <input type="number" class="form-control part-stitches-input" min="0" step="100"
+                               value="${part.stitches}" placeholder="e.g. 25000"
+                               oninput="updatePartField(${index}, 'stitches', this.value)" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mirrors / Head</label>
+                        <input type="number" class="form-control part-mirrors-input" min="0" step="1"
+                               value="${part.mirrors}" placeholder="e.g. 8"
+                               oninput="updatePartField(${index}, 'mirrors', this.value)">
+                    </div>
+                    <div>
+                        <button type="button" class="btn-remove-part" title="Remove this part"
+                                onclick="removePartRow(${index})" ${currentFormParts.length <= 1 ? 'disabled style="opacity:0.3; cursor:not-allowed;"' : ''}>
+                            ✕
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            recalcDesignTotals();
+        }
+
+        function updatePartField(index, field, value) {
+            if (!currentFormParts[index]) return;
+            if (field === 'stitches' || field === 'mirrors') {
+                currentFormParts[index][field] = Number(value) || 0;
+            } else {
+                currentFormParts[index][field] = value;
+            }
+            recalcDesignTotals();
+        }
+
+        function addNewPartRow() {
+            // Pick next unused item if available, or default to Tuk/Asteen
+            const used = currentFormParts.map(p => p.item);
+            const nextItem = STANDARD_ITEMS.find(it => !used.includes(it)) || "Tuk";
+            currentFormParts.push({ item: nextItem, stitches: 10000, mirrors: 0 });
+            renderFormPartRows();
+        }
+
+        function removePartRow(index) {
+            if (currentFormParts.length <= 1) return;
+            currentFormParts.splice(index, 1);
+            renderFormPartRows();
+        }
+
+        function applyPartsPreset(count) {
+            if (PRESETS[count]) {
+                currentFormParts = JSON.parse(JSON.stringify(PRESETS[count]));
+                renderFormPartRows();
+            }
+        }
+
+        function recalcDesignTotals() {
+            let totalStitches = 0;
+            let totalMirrors = 0;
+
+            currentFormParts.forEach(p => {
+                totalStitches += Number(p.stitches) || 0;
+                totalMirrors += Number(p.mirrors) || 0;
+            });
+
+            const partsCountEl = document.getElementById('totals-parts-count');
+            const stitchesEl = document.getElementById('totals-design-stitches');
+            const mirrorsEl = document.getElementById('totals-design-mirrors');
+
+            if (partsCountEl) partsCountEl.textContent = `${currentFormParts.length} Parts`;
+            if (stitchesEl) stitchesEl.textContent = `${formatNumber(totalStitches)} st`;
+            if (mirrorsEl) mirrorsEl.textContent = `${formatNumber(totalMirrors)} Mirrors`;
+
+            // Update live code badge
+            updateLiveCodeBadge();
+        }
+
+        function updateLiveCodeBadge() {
+            const partyInput = document.getElementById('input-party-code');
+            const codeInput = document.getElementById('input-design-code');
+            const previewText = document.getElementById('code-preview-text');
+
+            const party = (partyInput ? partyInput.value.trim().toUpperCase() : "") || "SH";
+            const num = (codeInput ? codeInput.value.trim() : "") || "70";
+            if (previewText) previewText.textContent = `${party}-${num}`;
+        }
+
+        // Render Design Gallery
+        function renderGallery() {
+            const grid = document.getElementById('designs-grid-container');
+            if (!grid) return;
+
+            // Load any saved custom designs
+            const stored = localStorage.getItem('smart_embroidery_designs');
+            const customDesigns = stored ? JSON.parse(stored) : [];
+            const allDesigns = [...customDesigns, ...INITIAL_DESIGNS];
+
+            grid.innerHTML = allDesigns.map(design => {
+                const totalStitches = design.parts.reduce((sum, p) => sum + (Number(p.stitches) || 0), 0);
+                const totalMirrors = design.parts.reduce((sum, p) => sum + (Number(p.mirrors) || 0), 0);
+                const party = design.party || (design.code.split('-')[0] || 'ZJI');
+
+                return `
+                    <div class="design-item-card">
+                        <div class="design-preview-frame">
+                            <img src="${design.image || 'assets/images/promo_hoop.jpg'}" alt="${design.code} Pattern" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
+                        </div>
+                        <div class="design-details-box">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                <span class="design-code-title">${design.code}</span>
+                                <span class="master-tag-pill">Party Code ${party}</span>
+                            </div>
+                            <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
+                                ${design.name || 'Embroidered Pattern'}
+                            </h4>
+                            <ul class="master-info-list" style="margin-top: 6px; padding-top: 6px;">
+                                <li><span>Total Stitches:</span> <strong>${formatNumber(totalStitches)} st</strong></li>
+                                <li><span>Parts in Set:</span> <strong>${design.parts.length} Parts</strong></li>
+                                <li><span>Mirrors / Head:</span> <strong>${totalMirrors > 0 ? `${formatNumber(totalMirrors)} Mirrors` : '0 Mirrors'}</strong></li>
+                                <li><span>Floor Status:</span> <strong style="color: var(--brand-forest);">${design.activeOn || 'Floor Ready'}</strong></li>
+                            </ul>
+                            <!-- Multi-Part Breakdown Tags -->
+                            <div class="part-breakdown-tags">
+                                ${design.parts.map(p => `
+                                    <span class="part-tag-badge">
+                                        ${p.item}: <strong>${formatNumber(p.stitches)} st</strong>${Number(p.mirrors) > 0 ? ` (${p.mirrors} mir)` : ''}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Initialize Form Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFormPartRows();
+            renderGallery();
+
+            const partyInput = document.getElementById('input-party-code');
+            const codeInput = document.getElementById('input-design-code');
+            if (partyInput) partyInput.addEventListener('input', updateLiveCodeBadge);
+            if (codeInput) codeInput.addEventListener('input', updateLiveCodeBadge);
+
+            const form = document.getElementById('fast-design-form');
+            if (form) {
+                form.onsubmit = (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('input-design-name').value.trim() || 'Custom Multi-Part Design';
+                    const party = document.getElementById('input-party-code').value.trim().toUpperCase() || 'SH';
+                    const num = document.getElementById('input-design-code').value.trim() || '101';
+                    const code = `${party}-${num}`;
+
+                    if (currentFormParts.length === 0) {
+                        alert('Please add at least one part for the design.');
+                        return;
+                    }
+
+                    const newDesign = {
+                        code: code,
+                        party: party,
+                        name: name,
+                        image: "assets/images/promo_hoop.jpg",
+                        activeOn: "Floor Ready (Assigned to Fleet)",
+                        parts: JSON.parse(JSON.stringify(currentFormParts))
+                    };
+
+                    // Save to localStorage
+                    const stored = localStorage.getItem('smart_embroidery_designs');
+                    const customDesigns = stored ? JSON.parse(stored) : [];
+                    // Prepend new design
+                    customDesigns.unshift(newDesign);
+                    localStorage.setItem('smart_embroidery_designs', JSON.stringify(customDesigns));
+
+                    // Also save simple code list for production autocomplete
+                    const storedCodes = localStorage.getItem('smart_embroidery_design_codes');
+                    const codeList = storedCodes ? JSON.parse(storedCodes) : [];
+                    if (!codeList.includes(code)) {
+                        codeList.push(code);
+                        localStorage.setItem('smart_embroidery_design_codes', JSON.stringify(codeList));
+                    }
+
+                    renderGallery();
+                    showNotification(`Design ${code} registered with ${currentFormParts.length} parts successfully!`, 'success');
+
+                    // Reset form fields with new suggestion
+                    document.getElementById('input-design-name').value = '';
+                    document.getElementById('input-design-code').value = String(Number(num) + 1 || 102);
+                    applyPartsPreset(4);
+                };
+            }
+        });
+    </script>
+</body>
+</html>

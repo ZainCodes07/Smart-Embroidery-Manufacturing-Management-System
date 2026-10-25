@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - Factory Operations Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 24px;
+            background: radial-gradient(circle at 50% 20%, rgba(34, 197, 94, 0.08) 0%, transparent 60%), #f6f7f4;
+        }
+        .auth-white-card {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 440px;
+            padding: 36px;
+            box-shadow: var(--shadow-modal);
+            position: relative;
+            overflow: hidden;
+        }
+        .auth-white-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1b4332, #2d6a4f, #52b788);
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-white-card">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div class="brand-logo-mark" style="margin: 0 auto 12px auto; width: 44px; height: 44px;">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                        <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                        <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                              stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                    </svg>
+                </div>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--brand-forest);">ZJI Fashions</h2>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">Embroidery Manufacturing Management System</p>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username or ID</label>
+                    <input type="text" id="username" class="form-control" placeholder="admin" value="admin" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 22px;">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" value="admin123" required>
+                </div>
+
+                <button type="submit" id="login-btn" class="auth-submit-btn">
+                    Sign In to Factory OS
+                </button>
+            </form>
+
+            <div class="quick-demo-buttons" style="margin-top: 18px;">
+                <button class="demo-account-btn" id="demo-admin" type="button">⚡ Quick Login as Admin</button>
+                <button class="demo-account-btn" id="demo-operator" type="button">🔧 Quick Login as Operator</button>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="dashboard.html" style="font-size: 12px; color: var(--brand-forest); font-weight: 600;">
+                    ← Return to Live Dashboard Preview
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        document.getElementById('demo-admin').onclick = () => {
+            setCurrentUser({ username: 'admin', name: 'Administrator', is_staff: true, role: 'admin' });
+            showNotification('Logged in as Administrator', 'success');
+            setTimeout(() => window.location.href = 'dashboard.html', 500);
+        };
+        document.getElementById('demo-operator').onclick = () => {
+            setCurrentUser({ username: 'operator_ali', name: 'Ali Raza (Operator)', is_staff: false, role: 'operator' });
+            showNotification('Logged in as Shift Operator', 'success');
+            setTimeout(() => window.location.href = 'dashboard.html', 500);
+        };
+    </script>
+</body>
+</html>

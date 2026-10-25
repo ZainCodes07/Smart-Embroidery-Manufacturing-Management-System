@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - Suppliers Directory | Master Data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile / Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Left Navigation Sidebar -->
+        <aside class="sidebar" id="app-sidebar">
+            <div>
+                <!-- Brand Header with Direct Collapse Trigger -->
+                <div class="brand-header">
+                    <div class="brand-left-group">
+                        <div class="brand-logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                                <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M28 12L24 16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                                <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                                      stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <div class="brand-details">
+                            <h1>ZJI Fashions</h1>
+                            <span class="brand-sub-line">Smart Embroidery</span>
+                            <span class="brand-sub-line">Manufacturing</span>
+                        </div>
+                    </div>
+                    <button class="sidebar-collapse-trigger" id="sidebar-collapse-trigger" title="Collapse Sidebar (Hide)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="15 15 12 12 15 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="nav-section">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" id="nav-dashboard">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                                        <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                                        <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+                                    </svg>
+                                </span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="machines.html" id="nav-machines">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path>
+                                    </svg>
+                                </span>
+                                <span>Machines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="production.html" id="nav-production">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 8v8M8 12h8"></path>
+                                    </svg>
+                                </span>
+                                <span>Production Entry</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="inventory.html" id="nav-inventory">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.29 7 12 12.01 20.71 7"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html" id="nav-reports">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Master Data Section -->
+                    <div class="nav-section-title">Master Data</div>
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="suppliers.html" id="nav-suppliers">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </span>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="materials.html" id="nav-materials">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0-.33-1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg>
+                                </span>
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="designs.html" id="nav-designs">
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="6" cy="6" r="3"></circle>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                        <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                        <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                                    </svg>
+                                </span>
+                                <span>Designs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom: Quote & User Profile -->
+            <div>
+                <div class="sidebar-art-container">
+                    <div class="sidebar-quote-box">
+                        <div class="sidebar-quote-script">Better<br>Stitches<br>Bigger<br>Dreams</div>
+                        <div class="sidebar-quote-dash"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-user-pill" id="sidebar-user-pill" title="Click for Account Options">
+                    <div class="user-initials-circle admin" id="sidebar-user-avatar">A</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+                        <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+                    </div>
+                    <span class="sidebar-user-arrow">▼</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport" id="main-viewport">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-navbar" id="sidebar-toggle-navbar" title="Expand Navigation Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="13 9 16 12 13 15"></polyline>
+                        </svg>
+                    </button>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search suppliers, materials, contacts...">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <!-- Live Date & Time Widget -->
+                    <div class="date-time-widget">
+                        <div class="date-text" id="live-date-label">Wed, 29 Oct 2025</div>
+                        <div class="time-text" id="live-time-label">02:45 PM</div>
+                    </div>
+
+                    <!-- Shift Badge -->
+                    <div class="shift-pill-badge" id="shift-pill-badge">
+                        <div class="shift-icon-sun">☀</div>
+                        <div class="shift-pill-details">
+                            <div class="shift-name" id="topbar-shift-title">Day Shift</div>
+                            <div class="shift-hours" id="topbar-shift-hours">9:00 AM – 9:00 PM</div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <button class="notification-bell-btn" id="notification-bell-btn" title="Notifications">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-count" id="notif-badge">3</span>
+                    </button>
+
+                    <!-- Topbar Profile Pill with Initials -->
+                    <div class="topbar-user-pill" id="topbar-user-pill" title="Click to Switch User / View Profile">
+                        <div class="user-initials-circle admin" id="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <div class="topbar-user-name" id="topbar-user-name">Admin</div>
+                            <div class="topbar-user-role" id="topbar-user-role">Administrator</div>
+                        </div>
+                        <span class="topbar-user-arrow">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Title Banner -->
+            <div class="page-title-banner">
+                <div class="page-title-text">
+                    <h1>Raw Material Suppliers Directory</h1>
+                    <p>Verified Karachi procurement partners supplying materials to ZJI Fashions embroidery fleet</p>
+                </div>
+                <button class="btn btn-primary" id="open-add-supplier-btn">
+                    <span>+</span> Register New Supplier
+                </button>
+            </div>
+
+            <!-- Supplier Feature Cards Grid (6 Karachi Suppliers) -->
+            <div class="master-grid-3col">
+                <!-- Supplier 1: Ali Traders (Bobbin Cones Only) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">⚪</div>
+                            <div>
+                                <h3 class="master-card-title">Ali Traders</h3>
+                                <p class="master-card-sub">Wholesale Cloth Market, Karachi</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Active</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Supplies:</span> <strong>Bobbin Cones Only (Multiple Colors: Black, White, etc.)</strong></li>
+                        <li><span>Category / Unit:</span> <strong>THREAD / CONE</strong></li>
+                        <li><span>Contact Person:</span> <strong>Muhammad Ali</strong></li>
+                        <li><span>Phone / WhatsApp:</span> <strong>+92 300 2481920</strong></li>
+                        <li><span>Delivery Lead Time:</span> <strong>24 Hours</strong></li>
+                        <li><span>Location:</span> <strong>Karachi</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Supplier 2: Al Raheem Traders (Normal Thread) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">🧵</div>
+                            <div>
+                                <h3 class="master-card-title">Al Raheem Traders</h3>
+                                <p class="master-card-sub">Korangi Industrial Area, Karachi</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Active</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Supplies:</span> <strong>Normal Thread (Multiple Colors: Red, Green, etc.)</strong></li>
+                        <li><span>Category / Unit:</span> <strong>THREAD / CONE</strong></li>
+                        <li><span>Contact Person:</span> <strong>Abdul Raheem</strong></li>
+                        <li><span>Phone / WhatsApp:</span> <strong>+92 321 8892110</strong></li>
+                        <li><span>Delivery Lead Time:</span> <strong>24 Hours</strong></li>
+                        <li><span>Location:</span> <strong>Karachi</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Supplier 3: Fashion (Metallic Thread) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">✨</div>
+                            <div>
+                                <h3 class="master-card-title">Fashion</h3>
+                                <p class="master-card-sub">Tariq Road / Saddar Wholesale, Karachi</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Active</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Supplies:</span> <strong>Metallic Thread (Multiple Colors: Golden, Pink, etc.)</strong></li>
+                        <li><span>Category / Unit:</span> <strong>THREAD / CONE</strong></li>
+                        <li><span>Contact Person:</span> <strong>Muhammad Rafiq</strong></li>
+                        <li><span>Phone / WhatsApp:</span> <strong>+92 312 9012345</strong></li>
+                        <li><span>Delivery Lead Time:</span> <strong>24 – 48 Hours</strong></li>
+                        <li><span>Location:</span> <strong>Karachi</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Supplier 4: Hasan Traders (Fusing Rolls & Needles) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">🪡</div>
+                            <div>
+                                <h3 class="master-card-title">Hasan Traders</h3>
+                                <p class="master-card-sub">Textile Plaza / Bolton Market, Karachi</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Active</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Supplies:</span> <strong>Fusing Rolls (1035 MM, 30 GM) & Needles (DBxK5)</strong></li>
+                        <li><span>Category / Unit:</span> <strong>FUSING (Rolls) & NEEDLE (Pieces)</strong></li>
+                        <li><span>Contact Person:</span> <strong>Hasan Mehmood</strong></li>
+                        <li><span>Phone / WhatsApp:</span> <strong>+92 301 5678912</strong></li>
+                        <li><span>Delivery Lead Time:</span> <strong>24 – 48 Hours</strong></li>
+                        <li><span>Location:</span> <strong>Karachi</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Supplier 5: Nawab Traders (Craft Mirrors) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">🪞</div>
+                            <div>
+                                <h3 class="master-card-title">Nawab Traders</h3>
+                                <p class="master-card-sub">Liaquatabad / Bolton Market, Karachi</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Active</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Supplies:</span> <strong>Craft Mirrors (Square, Diamond, Circle)</strong></li>
+                        <li><span>Category / Unit:</span> <strong>MIRROR / KG</strong></li>
+                        <li><span>Contact Person:</span> <strong>Nawabzada Tariq</strong></li>
+                        <li><span>Phone / WhatsApp:</span> <strong>+92 333 4521789</strong></li>
+                        <li><span>Delivery Lead Time:</span> <strong>Same Day / 24 Hours</strong></li>
+                        <li><span>Location:</span> <strong>Karachi</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Supplier 6: Yusuf Traders (Adhesive Glue) -->
+                <div class="master-card">
+                    <div class="master-card-header">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="master-card-icon">💧</div>
+                            <div>
+                                <h3 class="master-card-title">Yusuf Traders</h3>
+                                <p class="master-card-sub">SITE Industrial Area, Karachi</p>
+                            </div>
+                        </div>
+                        <span class="status-badge on-track">Active</span>
+                    </div>
+                    <ul class="master-info-list">
+                        <li><span>Supplies:</span> <strong>Glue Standard (Textile Craft Adhesive)</strong></li>
+                        <li><span>Category / Unit:</span> <strong>GLUE / LITER</strong></li>
+                        <li><span>Contact Person:</span> <strong>Yusuf Sheikh</strong></li>
+                        <li><span>Phone / WhatsApp:</span> <strong>+92 300 7890123</strong></li>
+                        <li><span>Delivery Lead Time:</span> <strong>24 – 48 Hours</strong></li>
+                        <li><span>Location:</span> <strong>Karachi</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Master Suppliers Ledger Table -->
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <h3>Procurement & Delivery Ledger (Karachi Vendors)</h3>
+                    <span style="font-size: 11.5px; color: var(--text-muted);">6 Active Database Registered Vendors</span>
+                </div>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Supplier Name</th>
+                            <th>Materials Supplied</th>
+                            <th>Contact Person</th>
+                            <th>Phone / WhatsApp</th>
+                            <th>Location</th>
+                            <th>Delivery Terms</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="machine-name">Ali Traders</td>
+                            <td>Bobbin Cones Only (Multiple Colors: Black, White)</td>
+                            <td>Muhammad Ali</td>
+                            <td>+92 300 2481920</td>
+                            <td>Karachi (Wholesale Mkt)</td>
+                            <td>24h / Net 15</td>
+                            <td><span class="status-badge on-track">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="machine-name">Al Raheem Traders</td>
+                            <td>Normal Thread (Multiple Colors: Red, Green)</td>
+                            <td>Abdul Raheem</td>
+                            <td>+92 321 8892110</td>
+                            <td>Karachi (Korangi)</td>
+                            <td>24h / Net 15</td>
+                            <td><span class="status-badge on-track">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="machine-name">Fashion</td>
+                            <td>Metallic Thread (Multiple Colors: Golden, Pink)</td>
+                            <td>Muhammad Rafiq</td>
+                            <td>+92 312 9012345</td>
+                            <td>Karachi (Tariq Road)</td>
+                            <td>24–48h / Net 30</td>
+                            <td><span class="status-badge on-track">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="machine-name">Hasan Traders</td>
+                            <td>Fusing Rolls (1035 MM, 30 GM) & Needles (DBxK5)</td>
+                            <td>Hasan Mehmood</td>
+                            <td>+92 301 5678912</td>
+                            <td>Karachi (Bolton Mkt)</td>
+                            <td>24–48h / Net 15</td>
+                            <td><span class="status-badge on-track">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="machine-name">Nawab Traders</td>
+                            <td>Craft Mirrors (Square, Diamond, Circle)</td>
+                            <td>Nawabzada Tariq</td>
+                            <td>+92 333 4521789</td>
+                            <td>Karachi (Liaquatabad)</td>
+                            <td>Same Day / COD</td>
+                            <td><span class="status-badge on-track">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="machine-name">Yusuf Traders</td>
+                            <td>Glue Standard (Textile Craft Adhesive)</td>
+                            <td>Yusuf Sheikh</td>
+                            <td>+92 300 7890123</td>
+                            <td>Karachi (SITE)</td>
+                            <td>24–48h / Net 15</td>
+                            <td><span class="status-badge on-track">Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal to Add New Supplier -->
+    <div class="modal-overlay-backdrop" id="add-supplier-modal">
+        <div class="auth-modal-box" style="max-width: 520px;">
+            <div class="inspect-header">
+                <h3>Register New Karachi Supplier</h3>
+                <button class="inspect-close-btn" id="close-supplier-modal">✕</button>
+            </div>
+            <div class="auth-modal-body">
+                <form id="supplier-form">
+                    <div class="form-group">
+                        <label class="form-label">Supplier / Company Name</label>
+                        <input type="text" class="form-control" placeholder="e.g. Nawab Traders" required>
+                    </div>
+                    <div class="form-grid-2col">
+                        <div class="form-group">
+                            <label class="form-label">Contact Person</label>
+                            <input type="text" class="form-control" placeholder="e.g. Tariq Khan" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone / WhatsApp</label>
+                            <input type="text" class="form-control" placeholder="+92 300 1234567" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Materials Supplied</label>
+                        <input type="text" class="form-control" placeholder="e.g. Bobbins, Metallic Thread, Mirrors" required>
+                    </div>
+                    <div class="form-grid-2col">
+                        <div class="form-group">
+                            <label class="form-label">Location (Karachi Area)</label>
+                            <input type="text" class="form-control" value="Karachi" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Payment Terms</label>
+                            <select class="form-control">
+                                <option>Net 15 Days</option>
+                                <option>Net 30 Days</option>
+                                <option>Cash on Delivery</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding: 12px;">Save Supplier to Database</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+        const modal = document.getElementById('add-supplier-modal');
+        const openBtn = document.getElementById('open-add-supplier-btn');
+        const closeBtn = document.getElementById('close-supplier-modal');
+        if (openBtn) openBtn.onclick = () => modal.classList.add('active');
+        if (closeBtn) closeBtn.onclick = () => modal.classList.remove('active');
+        if (modal) {
+            modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('active'); };
+        }
+        const supplierForm = document.getElementById('supplier-form');
+        if (supplierForm) {
+            supplierForm.onsubmit = (e) => {
+                e.preventDefault();
+                showNotification('New Supplier Registered Successfully!', 'success');
+                modal.classList.remove('active');
+            };
+        }
+    </script>
+</body>
+</html>

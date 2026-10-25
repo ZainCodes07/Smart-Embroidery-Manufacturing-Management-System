@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJI Fashions - 6-Machine Industrial Fleet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Left Navigation Sidebar -->
+        <aside class="sidebar" id="app-sidebar">
+            <div>
+                <!-- Brand Header -->
+                <div class="brand-header">
+                    <div class="brand-left-group">
+                        <div class="brand-logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="18" fill="#1b4332" />
+                                <path d="M12 28L28 12" stroke="#dcfce7" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="28" cy="12" r="1.5" fill="#ffffff" />
+                                <path d="M14 15C16 13 22 13 25 16C28 19 23 24 18 24C13 24 13 27 16 29C19 31 24 29 26 27" 
+                                      stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <div class="brand-details">
+                            <h1>ZJI Fashions</h1>
+                            <span class="brand-sub-line">Smart Embroidery</span>
+                            <span class="brand-sub-line">Manufacturing</span>
+                        </div>
+                    </div>
+                    <button class="sidebar-collapse-trigger" id="sidebar-collapse-trigger" title="Collapse Sidebar (Hide)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="15 15 12 12 15 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="nav-section">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg></span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="machines.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 20h20M5 20V8l5 4V8l5 4V4h4v16"></path></svg></span>
+                                <span>Machines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="production.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg></span>
+                                <span>Production Entry</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="inventory.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.29 7 12 12.01 20.71 7"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Master Data Section -->
+                    <div class="nav-section-title">Master Data</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="suppliers.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="materials.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="designs.html">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg></span>
+                                <span>Designs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom: Quote & User Profile -->
+            <div>
+                <div class="sidebar-art-container">
+                    <div class="sidebar-quote-box">
+                        <div class="sidebar-quote-script">Better<br>Stitches<br>Bigger<br>Dreams</div>
+                        <div class="sidebar-quote-dash"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-user-pill" id="sidebar-user-pill">
+                    <div class="user-initials-circle admin" id="sidebar-user-avatar">A</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebar-user-name">Admin</div>
+                        <div class="sidebar-user-role" id="sidebar-user-role">Administrator</div>
+                    </div>
+                    <span class="sidebar-user-arrow">▼</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport" id="main-viewport">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-navbar" id="sidebar-toggle-navbar" title="Expand Navigation Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2.5"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <polyline points="13 9 16 12 13 15"></polyline>
+                        </svg>
+                    </button>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search machines, head counts, active operators...">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <!-- Live Date & Time Widget (Synchronized on all pages) -->
+                    <div class="date-time-widget">
+                        <div class="date-text" id="live-date-label">Wed, 29 Oct 2025</div>
+                        <div class="time-text" id="live-time-label">02:45 PM</div>
+                    </div>
+
+                    <div class="shift-pill-badge">
+                        <div class="shift-icon-sun">☀</div>
+                        <div class="shift-pill-details">
+                            <div class="shift-name" id="topbar-shift-title">Day Shift</div>
+                            <div class="shift-hours" id="topbar-shift-hours">9:00 AM – 9:00 PM</div>
+                        </div>
+                    </div>
+
+                    <button class="notification-bell-btn" title="Notifications">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-count">3</span>
+                    </button>
+
+                    <div class="topbar-user-pill" id="topbar-user-pill">
+                        <div class="user-initials-circle admin" id="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <div class="topbar-user-name" id="topbar-user-name">Admin</div>
+                            <div class="topbar-user-role" id="topbar-user-role">Administrator</div>
+                        </div>
+                        <span class="topbar-user-arrow">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Title Banner -->
+            <div class="page-title-banner">
+                <div class="page-title-text">
+                    <h1>6-Machine Industrial Fleet Telemetry</h1>
+                    <p>Live head synchronization (18, 20, 24 heads), shift speeds, and machine assignment at ZJI Fashions</p>
+                </div>
+                <a href="production.html" class="btn btn-primary">
+                    <span>+</span> Log Shift Entry
+                </a>
+            </div>
+
+            <!-- Fleet Overview Cards Grid (Same High-End UI as Dashboard) -->
+            <div class="master-grid-3col">
+                <!-- Unit 1 -->
+                <div class="fleet-card-expanded running">
+                    <div>
+                        <div class="fleet-top-row">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Machine 01</h3>
+                                <span style="font-size: 11px; color: var(--text-muted);">Unit #1 • 18 Heads (Blue Unit)</span>
+                            </div>
+                            <span class="machine-status-tag running">Running</span>
+                        </div>
+                        <div class="fleet-photo-box">
+                            <img src="assets/images/embroidery-machine-1-blue-12-head.png" alt="Machine 01">
+                        </div>
+                        <div style="font-size: 11.5px; margin-bottom: 6px;">
+                            Active Job: <strong>SH-70</strong> <span style="color: var(--border-color);">|</span> Part: <strong>3</strong>
+                        </div>
+                        <div class="machine-progress-row" style="margin-bottom: 12px;">
+                            <div class="progress-track"><div class="progress-fill running" style="width: 68%;"></div></div>
+                            <span class="machine-progress-pct">68%</span>
+                        </div>
+                        <div class="fleet-metrics-2col">
+                            <div class="fleet-metric-pill">
+                                <span>Speed (RPM)</span>
+                                <strong style="color: var(--brand-forest);">850 RPM</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Efficiency</span>
+                                <strong style="color: #16a34a;">94.2%</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Shift Stitches</span>
+                                <strong>45,280</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Operator</span>
+                                <strong>Ali Raza</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 14px;">
+                        <a href="production.html?machine=1" class="btn btn-primary" style="flex: 1; font-size: 11.5px; padding: 8px;">Log Shift ➔</a>
+                        <a href="dashboard.html" class="btn btn-secondary" style="font-size: 11.5px; padding: 8px;">Telemetry ⚡</a>
+                    </div>
+                </div>
+
+                <!-- Unit 2 -->
+                <div class="fleet-card-expanded running">
+                    <div>
+                        <div class="fleet-top-row">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Machine 02</h3>
+                                <span style="font-size: 11px; color: var(--text-muted);">Unit #2 • 18 Heads (Green Multi-Head)</span>
+                            </div>
+                            <span class="machine-status-tag running">Running</span>
+                        </div>
+                        <div class="fleet-photo-box">
+                            <img src="assets/images/embroidery-machine-2-green-multi-head.png" alt="Machine 02">
+                        </div>
+                        <div style="font-size: 11.5px; margin-bottom: 6px;">
+                            Active Job: <strong>AB-101</strong> <span style="color: var(--border-color);">|</span> Part: <strong>5</strong>
+                        </div>
+                        <div class="machine-progress-row" style="margin-bottom: 12px;">
+                            <div class="progress-track"><div class="progress-fill running" style="width: 52%;"></div></div>
+                            <span class="machine-progress-pct">52%</span>
+                        </div>
+                        <div class="fleet-metrics-2col">
+                            <div class="fleet-metric-pill">
+                                <span>Speed (RPM)</span>
+                                <strong style="color: var(--brand-forest);">820 RPM</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Efficiency</span>
+                                <strong style="color: #16a34a;">89.0%</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Shift Stitches</span>
+                                <strong>38,120</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Operator</span>
+                                <strong>Usman Tariq</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 14px;">
+                        <a href="production.html?machine=2" class="btn btn-primary" style="flex: 1; font-size: 11.5px; padding: 8px;">Log Shift ➔</a>
+                        <a href="dashboard.html" class="btn btn-secondary" style="font-size: 11.5px; padding: 8px;">Telemetry ⚡</a>
+                    </div>
+                </div>
+
+                <!-- Unit 3 -->
+                <div class="fleet-card-expanded idle">
+                    <div>
+                        <div class="fleet-top-row">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Machine 03</h3>
+                                <span style="font-size: 11px; color: var(--text-muted);">Unit #3 • 24 Heads (Worlden Heavy)</span>
+                            </div>
+                            <span class="machine-status-tag idle">Idle</span>
+                        </div>
+                        <div class="fleet-photo-box">
+                            <img src="assets/images/embroidery-machine-3-worlden-multi-head.png" alt="Machine 03">
+                        </div>
+                        <div style="font-size: 11.5px; margin-bottom: 6px;">
+                            Active Job: <strong>D-101</strong> <span style="color: var(--border-color);">|</span> Part: <strong>2</strong>
+                        </div>
+                        <div class="machine-progress-row" style="margin-bottom: 12px;">
+                            <div class="progress-track"><div class="progress-fill idle" style="width: 0%;"></div></div>
+                            <span class="machine-progress-pct">0%</span>
+                        </div>
+                        <div class="fleet-metrics-2col">
+                            <div class="fleet-metric-pill">
+                                <span>Speed (RPM)</span>
+                                <strong>0 RPM</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Efficiency</span>
+                                <strong style="color: var(--text-muted);">Standby</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Shift Stitches</span>
+                                <strong>0</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Operator</span>
+                                <strong>Zahid Khan</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 14px;">
+                        <a href="production.html?machine=3" class="btn btn-primary" style="flex: 1; font-size: 11.5px; padding: 8px;">Log Shift ➔</a>
+                        <a href="dashboard.html" class="btn btn-secondary" style="font-size: 11.5px; padding: 8px;">Telemetry ⚡</a>
+                    </div>
+                </div>
+
+                <!-- Unit 4 -->
+                <div class="fleet-card-expanded running">
+                    <div>
+                        <div class="fleet-top-row">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Machine 04</h3>
+                                <span style="font-size: 11px; color: var(--text-muted);">Unit #4 • 24 Heads (White High-Speed A)</span>
+                            </div>
+                            <span class="machine-status-tag running">Running</span>
+                        </div>
+                        <div class="fleet-photo-box">
+                            <img src="assets/images/embroidery-machine-4-white-12-head-a.png" alt="Machine 04">
+                        </div>
+                        <div style="font-size: 11.5px; margin-bottom: 6px;">
+                            Active Job: <strong>SH-70</strong> <span style="color: var(--border-color);">|</span> Part: <strong>4</strong>
+                        </div>
+                        <div class="machine-progress-row" style="margin-bottom: 12px;">
+                            <div class="progress-track"><div class="progress-fill running" style="width: 73%;"></div></div>
+                            <span class="machine-progress-pct">73%</span>
+                        </div>
+                        <div class="fleet-metrics-2col">
+                            <div class="fleet-metric-pill">
+                                <span>Speed (RPM)</span>
+                                <strong style="color: var(--brand-forest);">890 RPM</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Efficiency</span>
+                                <strong style="color: #16a34a;">96.5%</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Shift Stitches</span>
+                                <strong>58,400</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Operator</span>
+                                <strong>Farhan Qadir</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 14px;">
+                        <a href="production.html?machine=4" class="btn btn-primary" style="flex: 1; font-size: 11.5px; padding: 8px;">Log Shift ➔</a>
+                        <a href="dashboard.html" class="btn btn-secondary" style="font-size: 11.5px; padding: 8px;">Telemetry ⚡</a>
+                    </div>
+                </div>
+
+                <!-- Unit 5 -->
+                <div class="fleet-card-expanded setup">
+                    <div>
+                        <div class="fleet-top-row">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Machine 05</h3>
+                                <span style="font-size: 11px; color: var(--text-muted);">Unit #5 • 24 Heads (White High-Speed B)</span>
+                            </div>
+                            <span class="machine-status-tag setup">Setup</span>
+                        </div>
+                        <div class="fleet-photo-box">
+                            <img src="assets/images/embroidery-machine-5-white-12-head-b.png" alt="Machine 05">
+                        </div>
+                        <div style="font-size: 11.5px; margin-bottom: 6px;">
+                            Active Job: <strong>AB-101</strong> <span style="color: var(--border-color);">|</span> Part: <strong>1</strong>
+                        </div>
+                        <div class="machine-progress-row" style="margin-bottom: 12px;">
+                            <div class="progress-track"><div class="progress-fill setup" style="width: 21%;"></div></div>
+                            <span class="machine-progress-pct">21%</span>
+                        </div>
+                        <div class="fleet-metrics-2col">
+                            <div class="fleet-metric-pill">
+                                <span>Speed (RPM)</span>
+                                <strong style="color: #3b82f6;">450 RPM</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Efficiency</span>
+                                <strong>65.0%</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Shift Stitches</span>
+                                <strong>12,300</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Operator</span>
+                                <strong>Hamza Naveed</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 14px;">
+                        <a href="production.html?machine=5" class="btn btn-primary" style="flex: 1; font-size: 11.5px; padding: 8px;">Log Shift ➔</a>
+                        <a href="dashboard.html" class="btn btn-secondary" style="font-size: 11.5px; padding: 8px;">Telemetry ⚡</a>
+                    </div>
+                </div>
+
+                <!-- Unit 6 -->
+                <div class="fleet-card-expanded running">
+                    <div>
+                        <div class="fleet-top-row">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Machine 06</h3>
+                                <span style="font-size: 11px; color: var(--text-muted);">Unit #6 • 20 Heads (Jinyu Precision)</span>
+                            </div>
+                            <span class="machine-status-tag running">Running</span>
+                        </div>
+                        <div class="fleet-photo-box">
+                            <img src="assets/images/embroidery-machine-6-jinyu-10-head.png" alt="Machine 06">
+                        </div>
+                        <div style="font-size: 11.5px; margin-bottom: 6px;">
+                            Active Job: <strong>D-101</strong> <span style="color: var(--border-color);">|</span> Part: <strong>6</strong>
+                        </div>
+                        <div class="machine-progress-row" style="margin-bottom: 12px;">
+                            <div class="progress-track"><div class="progress-fill running" style="width: 64%;"></div></div>
+                            <span class="machine-progress-pct">64%</span>
+                        </div>
+                        <div class="fleet-metrics-2col">
+                            <div class="fleet-metric-pill">
+                                <span>Speed (RPM)</span>
+                                <strong style="color: var(--brand-forest);">830 RPM</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Efficiency</span>
+                                <strong style="color: #16a34a;">91.4%</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Shift Stitches</span>
+                                <strong>41,900</strong>
+                            </div>
+                            <div class="fleet-metric-pill">
+                                <span>Operator</span>
+                                <strong>Babar Azam</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 14px;">
+                        <a href="production.html?machine=6" class="btn btn-primary" style="flex: 1; font-size: 11.5px; padding: 8px;">Log Shift ➔</a>
+                        <a href="dashboard.html" class="btn btn-secondary" style="font-size: 11.5px; padding: 8px;">Telemetry ⚡</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+</body>
+</html>
