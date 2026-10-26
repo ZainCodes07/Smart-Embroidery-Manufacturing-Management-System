@@ -647,18 +647,21 @@ function easeOutCubic(t) {
    ========================================================= */
 async function tryFetchBackendStats() {
     try {
-        const resp = await fetch('http://127.0.0.1:8000/api/dashboard/stats/', {
+        const resp = await fetch(`${API_BASE_URL}/dashboard/stats/`, {
             method: 'GET',
             headers: { 'Accept': 'application/json' }
         });
         if (resp.ok) {
             const data = await resp.json();
-            // Enrich with live backend count if present
-            if (data.total_machines) {
+            console.log('Live Backend Dashboard Stats:', data);
+            if (data.total_machines && document.getElementById('kpi-total-machines')) {
                 document.getElementById('kpi-total-machines').textContent = data.total_machines;
+            }
+            if (data.total_stitches && document.getElementById('kpi-today-production')) {
+                document.getElementById('kpi-today-production').textContent = Number(data.total_stitches).toLocaleString();
             }
         }
     } catch {
-        // Backend offline or unreachable, authentic screenshot mock values remain intact
+        // Backend offline or unreachable, authentic baseline mock values remain intact
     }
 }

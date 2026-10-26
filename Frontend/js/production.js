@@ -391,7 +391,29 @@ async function commitFullShiftToDatabase() {
         console.error(e);
     }
 
-    showNotification(`12-Hour ${shiftType} Shift successfully committed to Production Ledger!`, 'success');
+    // Submit live payload to Django REST Framework API -> MS SQL Server
+    try {
+        const response = await fetch(`${API_BASE_URL}/production/shifts/commit-fleet-shift/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log("SQL Server Shift Commit Response:", result);
+            showNotification(`12-Hour ${shiftType} Shift successfully committed to MS SQL Server! (${Number(result.total_stitches || 0).toLocaleString()} st)`, 'success');
+        } else {
+            console.warn("Backend API responded with error, saved locally:", response.status);
+            showNotification(`Shift saved to local ledger (Backend HTTP ${response.status})`, 'warning');
+        }
+    } catch (err) {
+        console.warn("Backend API offline, shift safely preserved locally:", err);
+        showNotification(`12-Hour ${shiftType} Shift committed to Production Ledger!`, 'success');
+    }
 
     setTimeout(() => {
         window.location.href = 'reports.html';
