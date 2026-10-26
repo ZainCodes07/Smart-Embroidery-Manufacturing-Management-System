@@ -616,6 +616,21 @@
                         localStorage.setItem('smart_embroidery_design_codes', JSON.stringify(codeList));
                     }
 
+                    // Also sync with MS SQL Server Designs table via API
+                    try {
+                        fetch(${API_BASE_URL}/production/designs/, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                partycode: party,
+                                designnumber: num,
+                                description: name,
+                                isactive: true
+                            })
+                        }).then(res => res.json()).then(resData => {
+                            console.log('SQL Server Design registered:', resData);
+                        }).catch(err => console.warn('Backend offline, design saved locally:', err));
+                    } catch (err) {}
                     renderGallery();
                     showNotification(`Design ${code} registered with ${currentFormParts.length} parts successfully!`, 'success');
 
