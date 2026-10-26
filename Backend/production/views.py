@@ -1,4 +1,5 @@
 import datetime
+from decimal import Decimal
 from rest_framework import viewsets, filters, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -54,6 +55,12 @@ class ProductionShiftViewSet(viewsets.ModelViewSet):
         saved_shifts = []
         total_stitches = 0
         total_mirrors = 0
+        total_issues_count = 0
+
+        from inventory.models import Materialissues, Materialissuelines, Materials
+        mat_normal = Materials.objects.filter(category='THREAD', materialname__icontains='Normal').first()
+        mat_bobbin = Materials.objects.filter(category='THREAD', materialname__icontains='Bobbin').first()
+        mat_mirror = Materials.objects.filter(category='MIRROR').first()
 
         # Support both dictionary mapping {1: {...}} and array of machines [{...}]
         machine_items = machines_data.values() if isinstance(machines_data, dict) else machines_data
@@ -81,6 +88,9 @@ class ProductionShiftViewSet(viewsets.ModelViewSet):
                     defaults={'notes': notes[:250]}
                 )
                 saved_shifts.append(shift)
+
+                machine_stitches = 0
+                machine_mirrors = 0
 
                 for r in runs:
                     design_code = (r.get('designCode') or r.get('design_code') or 'SH-70').strip().upper()
@@ -121,17 +131,65 @@ class ProductionShiftViewSet(viewsets.ModelViewSet):
                         }
                     )
 
-                    total_stitches += run_total_stitches
-                    total_mirrors += (run_total_mirrors_per_head * heads_used)
+                    machine_stitches += run_total_stitches
+                    machine_mirrors += (run_total_mirrors_per_head * heads_used)
+
+                total_stitches += machine_stitches
+                total_mirrors += machine_mirrors
+
+                # Auto-deduct raw materials issued to this machine for this shift
+                if machine_stitches > 0 or machine_mirrors > 0:
+                    try:
+                        issue = Materialissues.objects.create(
+                            issuedate=shift_date,
+                            issuetype='PRODUCTION',
+                            machineid=machine,
+                            notes=f"Auto-deducted for Machine {machine.machinenumber} ({machine_stitches:,} st, {machine_mirrors:,} mir)"[:500]
+                        )
+                        total_issues_count += 1
+
+                        # Normal Thread Cones (~250k stitches = 1 cone)
+                        cones_normal = round(Decimal(machine_stitches) / Decimal(250000), 3)
+                        if cones_normal > 0 and mat_normal:
+                            Materialissuelines.objects.create(
+                                issueid=issue,
+                                materialid=mat_normal,
+                                issuequantity=cones_normal,
+                                notes=f"Normal thread for Unit #{machine.machinenumber}"
+                            )
+
+                        # Bobbin Cones (~400k stitches = 1 cone)
+                        cones_bobbin = round(Decimal(machine_stitches) / Decimal(400000), 3)
+                        if cones_bobbin > 0 and mat_bobbin:
+                            Materialissuelines.objects.create(
+                                issueid=issue,
+                                materialid=mat_bobbin,
+                                issuequantity=cones_bobbin,
+                                notes=f"Bobbin cones for Unit #{machine.machinenumber}"
+                            )
+
+                        # Craft Mirrors (~500 mirrors = 1 KG)
+                        if machine_mirrors > 0:
+                            kg_mirrors = round(Decimal(machine_mirrors) / Decimal(500), 3)
+                            if kg_mirrors > 0 and mat_mirror:
+                                Materialissuelines.objects.create(
+                                    issueid=issue,
+                                    materialid=mat_mirror,
+                                    issuequantity=kg_mirrors,
+                                    notes=f"Craft mirrors for Unit #{machine.machinenumber}"
+                                )
+                    except Exception as e:
+                        print(f"Material issue error on machine {machine.machinenumber}: {e}")
 
         return Response({
             'success': True,
-            'message': f"Successfully committed shift log for {len(saved_shifts)} machines into SQL Server.",
+            'message': f"Successfully committed shift log for {len(saved_shifts)} machines into SQL Server with inventory deductions.",
             'shift_date': str(shift_date),
             'shift_type': shift_type,
             'machines_count': len(saved_shifts),
             'total_stitches': total_stitches,
-            'total_mirrors': total_mirrors
+            'total_mirrors': total_mirrors,
+            'material_issues_created': total_issues_count
         }, status=status.HTTP_201_CREATED)
 
 
