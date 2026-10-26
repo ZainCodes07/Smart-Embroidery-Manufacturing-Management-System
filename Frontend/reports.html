@@ -250,7 +250,7 @@
                     <button class="btn btn-secondary" onclick="window.print()">
                         <span>🖨</span> Print Ledger
                     </button>
-                    <button class="btn btn-primary" onclick="showNotification('Exporting CSV Audit Data...', 'success')">
+                    <button class="btn btn-primary" onclick="exportAuditLedgerToCSV()">
                         <span>⬇</span> Export CSV
                     </button>
                 </div>
@@ -261,31 +261,31 @@
                 <div class="form-grid-3col">
                     <div class="form-group">
                         <label class="form-label">Filter by Machine</label>
-                        <select class="form-control">
-                            <option>All 6 Machines</option>
-                            <option>Machine 01 (18H)</option>
-                            <option>Machine 02 (18H)</option>
-                            <option>Machine 03 (24H)</option>
-                            <option>Machine 04 (24H)</option>
-                            <option>Machine 05 (24H)</option>
-                            <option>Machine 06 (20H)</option>
+                        <select class="form-control" id="filter-machine" onchange="applyAuditFilters()">
+                            <option value="">All 6 Machines</option>
+                            <option value="Machine 01">Machine 01 (18H)</option>
+                            <option value="Machine 02">Machine 02 (18H)</option>
+                            <option value="Machine 03">Machine 03 (24H)</option>
+                            <option value="Machine 04">Machine 04 (24H)</option>
+                            <option value="Machine 05">Machine 05 (24H)</option>
+                            <option value="Machine 06">Machine 06 (20H)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Shift Cycle</label>
-                        <select class="form-control">
-                            <option>All Cycles (Day & Night)</option>
-                            <option>Day Shift Only</option>
-                            <option>Night Shift Only</option>
+                        <select class="form-control" id="filter-shift-cycle" onchange="applyAuditFilters()">
+                            <option value="">All Cycles (Day & Night)</option>
+                            <option value="Day">Day Shift Only</option>
+                            <option value="Night">Night Shift Only</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Design Filter</label>
-                        <select class="form-control">
-                            <option>All Designs</option>
-                            <option>SH-70</option>
-                            <option>AB-101</option>
-                            <option>D-101</option>
+                        <select class="form-control" id="filter-design" onchange="applyAuditFilters()">
+                            <option value="">All Designs</option>
+                            <option value="SH-70">SH-70</option><option value="SH-71">SH-71</option>
+                            <option value="AB-101">AB-101</option>
+                            <option value="D-101">D-101</option>
                         </select>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="reports-tbody">
                         <tr>
                             <td>29 Oct 2025 02:15 PM</td>
                             <td class="machine-name">Machine 01</td>
@@ -400,5 +400,6 @@
     </div>
 
     <script src="js/config.js"></script>
+    <script src="js/reports.js"></script>
 </body>
 </html>

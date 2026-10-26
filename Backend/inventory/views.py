@@ -1,4 +1,8 @@
+from decimal import Decimal
+from django.db.models import Sum
 from rest_framework import viewsets, filters
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from .models import (
     Suppliers,
     Materials,
@@ -29,6 +33,27 @@ class MaterialViewSet(viewsets.ModelViewSet):
     serializer_class = MaterialSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['materialname', 'variant', 'category']
+
+    @action(detail=False, methods=['get'], url_path='stock-balance')
+    def stock_balance(self, request):
+        materials = Materials.objects.filter(isactive=True).order_by('category', 'materialname')
+        data = []
+        for m in materials:
+            inward = Materialreceiptlines.objects.filter(materialid=m).aggregate(total=Sum('basequantity'))['total'] or Decimal('0.0')
+            outward = Materialissuelines.objects.filter(materialid=m).aggregate(total=Sum('issuequantity'))['total'] or Decimal('0.0')
+            balance = inward - outward
+            data.append({
+                'material_id': m.materialid,
+                'material_name': m.materialname,
+                'variant': m.variant,
+                'category': m.category,
+                'base_unit': m.baseunit,
+                'total_received': float(inward),
+                'total_issued': float(outward),
+                'current_balance': float(balance),
+                'status': 'Low Stock' if balance < 10 else 'Adequate'
+            })
+        return Response(data)
 
 
 class MaterialReceiptViewSet(viewsets.ModelViewSet):
